@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,11 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [MainController::class, 'welcome']);
-Route::get('/admin_panel', [MainController::class, 'admin_panel']);
+Route::get('/admin_panel', [AdminController::class, 'admin_panel']);
+// Route::get('/admin_layout', [AdminController::class, 'admin_layout']);
+
+Route::get('/admin_nav', [AdminController::class, 'nav'])->name('nav');
+Route::post('/add_nav', [AdminController::class, 'add_nav']);
+Route::post('/exit_nav/{id}', [AdminController::class, 'exit_nav']);
+Route::get('/delete_nav/{id}', [AdminController::class, 'delete_nav']);
 

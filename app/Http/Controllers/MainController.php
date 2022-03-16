@@ -11,8 +11,5 @@ class MainController extends Controller
     {
         return view('welcome');
     }
-        public function admin_panel()
-    {
-        return view('admin_panel');
-    }
+    
 }

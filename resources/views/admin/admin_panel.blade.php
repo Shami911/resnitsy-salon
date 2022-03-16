@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('admin.admin_layout')
 @section('admin_main')
 <main id="main" class="main">
     <section class="section dashboard">
