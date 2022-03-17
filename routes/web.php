@@ -18,8 +18,13 @@ Route::get('/', [MainController::class, 'welcome']);
 Route::get('/admin_panel', [AdminController::class, 'admin_panel']);
 // Route::get('/admin_layout', [AdminController::class, 'admin_layout']);
 
-Route::get('/admin_nav', [AdminController::class, 'admin_nav']);
+Route::get('/admin_nav', [AdminController::class, 'admin_nav'])->name('admin_nav');
 Route::post('/add_nav', [AdminController::class, 'add_nav']);
 Route::post('/exit_nav/{id}', [AdminController::class, 'exit_nav']);
 Route::get('/delete_nav/{id}', [AdminController::class, 'delete_nav']);
+
+Route::get('/img_about', [AdminController::class, 'img_about'])->name('img_about');
+Route::post('/add_img_about', [AdminController::class, 'add_img_about']);
+Route::post('/exit_img_about/{id}', [AdminController::class, 'exit_img_about']);
+Route::get('/delete_img_about/{id}', [AdminController::class, 'delete_img_about']);
 
