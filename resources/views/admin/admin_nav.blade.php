@@ -22,7 +22,7 @@
 
         <section class="section dashboard mt-2">
             <div class="row">
-                @foreach ($navs as $item)
+                @foreach ($review as $item)
                 <div class="col-1">
                     <div class="card info-card sales-card pb-0">
 
@@ -34,12 +34,12 @@
                             </ul>
                         </div>
 
-                        <div class="card-body py-1" style="padding-left: 10px;">
-                            <div class="m-1">
-                                <li>{{$item->nav1}}</li>
-                            </div>
+                    <section id="hero" class="d-flex align-items-center justify-content-center">
+                            <div class="container position-relative">
+                            <h1>{{$item->title}}</h1>
+                            <h2>{{$item->slogan}}</h2>
                         </div>
-
+                    </section><!-- End Hero -->
                     </div>
                 </div>
                 <!-- End Sales Card -->
@@ -57,7 +57,7 @@
                                     @csrf
                                     <div class="form-floating mt-2">
                                         <input type="text" name="link" value="{{$item->link}}" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">Текст 1</label> @if($errors->has('nav1')) {{$errors->first('nav1')}} @endif
+                                        <label for="floatingInput">Текст 1</label> @if($errors->has('nav')) {{$errors->first('nav')}} @endif
                                     </div>
                                     <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
                                 </form>

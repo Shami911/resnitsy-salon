@@ -11,5 +11,4 @@ class MainController extends Controller
     {
         return view('welcome');
     }
-    
 }
