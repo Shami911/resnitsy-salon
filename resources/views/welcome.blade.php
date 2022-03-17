@@ -59,24 +59,20 @@
               <img src="/storage/ImgAbout/{{$item->img}}" class="col-12 col-lg-10" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0">
-              <h3>Поресничное наращивание</h3>
+              <h3>{{$item->title}}</h3>
               <p>
-                  Поресничное наращивание — процесс наращивания на одну натуральную ресницу одной и более ресниц, специальным клеем. Продолжительность носки зависит от множества факторов, которые включают в себя:
-
-                  Скорость обменных процессов в организме каждого человека.
-                  Качество выполненной процедуры. Для работы клеевой капли необходимо, чтобы соотношение влажности воздуха и температуры в помещении, где проводится процедура, было оптимальным.
-                  Уход за ресницами после наращивания. Постоянное механическое воздействие может поспособствовать отклеиванию искусственной ресницы от натуральной.
+                {{$item->description}}
               </p>
               <div class="row">
                 <div class="col-md-6">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4> {{$item->slogatLeft}}</h4>
+                  <p>{{$item->descriptionSL}}</p>
                 </div>
                 <div class="col-md-6">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <h4>{{$item->slogatRight}}</h4>
+                  <p>{{$item->descriptionSR}}</p>
                 </div>
               </div>
             </div>

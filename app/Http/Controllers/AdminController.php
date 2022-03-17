@@ -56,6 +56,11 @@ class AdminController extends Controller
             $valid = $data->validate([
                 'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
                 'title' => ['required'],
+                'description' => ['required'],
+                'slogatLeft' => ['required'],
+                'descriptionSL' => ['required'],
+                'slogatRight' => ['required'],
+                'descriptionSR' => ['required'],
             ]); 
     
             $file = $data->file('img');
@@ -66,6 +71,11 @@ class AdminController extends Controller
             $img = new ImgAbout();
             $img->img = $filename;
             $img->title = $data->input('title');
+            $img->description = $data->input('description');
+            $img->slogatLeft = $data->input('slogatLeft');
+            $img->descriptionSL = $data->input('descriptionSL');
+            $img->slogatRight = $data->input('slogatRight');
+            $img->descriptionSR = $data->input('descriptionSR');
             $img->save();
             return redirect()->route('img_about');
         }
@@ -73,7 +83,12 @@ class AdminController extends Controller
         public function exit_img_about(Request $data, $id){
             $valid = $data->validate([
                 'img' => ['image', 'mimetypes:image/jpeg,image/png,image/webp'],
-                'title' => ['required']
+                'title' => ['required'],
+                'description' => ['required'],
+                'slogatLeft' => ['required'],
+                'descriptionSL' => ['required'],
+                'slogatRight' => ['required'],
+                'descriptionSR' => ['required']
             ]); 
             
             $img = ImgAbout::find($id);
@@ -90,6 +105,11 @@ class AdminController extends Controller
             }
             
             $img->title = $data->input('title');
+            $img->description = $data->input('description');
+            $img->slogatLeft = $data->input('slogatLeft');
+            $img->descriptionSL = $data->input('descriptionSL');
+            $img->slogatRight = $data->input('slogatRight');
+            $img->descriptionSR = $data->input('descriptionSR');
             $img->save();
     
             return redirect()->route('img_about');

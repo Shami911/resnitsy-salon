@@ -68,6 +68,46 @@
                                             {{$errors->first('title')}}
                                         @endif
                                     </div>
+
+                                    <div class="form-floating mt-2">
+                                        <input type="text" name="description" value="{{$item->description}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Описание</label>
+                                        @if($errors->has('description'))
+                                            {{$errors->first('description')}}
+                                        @endif
+                                    </div>
+
+                                    <div class="form-floating mt-2">
+                                        <input type="text" name="slogatLeft" value="{{$item->slogatLeft}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Левый слоган</label>
+                                        @if($errors->has('slogatLeft'))
+                                            {{$errors->first('slogatLeft')}}
+                                        @endif
+                                    </div>
+
+                                    <div class="form-floating mt-2">
+                                        <input type="text" name="descriptionSL" value="{{$item->descriptionSL}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Описание левого слогана</label>
+                                        @if($errors->has('descriptionSL'))
+                                            {{$errors->first('descriptionSL')}}
+                                        @endif
+                                    </div>
+
+                                    <div class="form-floating mt-2">
+                                        <input type="text" name="slogatRight" value="{{$item->slogatRight}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Правый слоган</label>
+                                        @if($errors->has('slogatRight'))
+                                            {{$errors->first('slogatRight')}}
+                                        @endif
+                                    </div>
+
+                                    <div class="form-floating mt-2">
+                                        <input type="text" name="descriptionSR" value="{{$item->descriptionSR}}" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Описание правого слогана</label>
+                                        @if($errors->has('descriptionSR'))
+                                            {{$errors->first('descriptionSR')}}
+                                        @endif
+                                    </div>
     
                                     <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
                                 </form>
@@ -106,6 +146,46 @@
                     <label for="floatingInput">Название рекламы</label>
                     @if($errors->has('title'))
                         {{$errors->first('title')}}
+                    @endif
+                </div>
+
+                <div class="form-floating mt-2">
+                    <input type="text" name="description" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Описание</label>
+                    @if($errors->has('description'))
+                        {{$errors->first('description')}}
+                    @endif
+                </div>
+
+                <div class="form-floating mt-2">
+                    <input type="text" name="slogatLeft" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Левый слоган</label>
+                    @if($errors->has('slogatLeft'))
+                        {{$errors->first('slogatLeft')}}
+                    @endif
+                </div>
+
+                <div class="form-floating mt-2">
+                    <input type="text" name="descriptionSL" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Описание левого слогана</label>
+                    @if($errors->has('descriptionSL'))
+                        {{$errors->first('descriptionSL')}}
+                    @endif
+                </div>
+
+                <div class="form-floating mt-2">
+                    <input type="text" name="slogatRight" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Правый слоган</label>
+                    @if($errors->has('slogatRight'))
+                        {{$errors->first('slogatRight')}}
+                    @endif
+                </div>
+
+                <div class="form-floating mt-2">
+                    <input type="text" name="descriptionSR" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Описание правого слогана</label>
+                    @if($errors->has('descriptionSR'))
+                        {{$errors->first('descriptionSR')}}
                     @endif
                 </div>
 

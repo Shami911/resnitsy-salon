@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->text('img');
             $table->string('title');
+            $table->string('description');
+            $table->string('slogatLeft');
+            $table->string('descriptionSL');
+            $table->string('slogatRight');
+            $table->string('descriptionSR');
             $table->timestamps();
         });
     }
