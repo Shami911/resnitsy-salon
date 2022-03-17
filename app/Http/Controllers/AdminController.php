@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\nav;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,38 +17,6 @@ class AdminController extends Controller
     // public function admin_layout(){
     //     return view('admin.admin_layout');
     // }
-    public function nav(){
-        $nav = new nav();
-        return view ('admin.nav' , ['nav' => $nav->all()]);
-    }
-    public function add_nav(Request $data){
-        $valid = $data->validate([
-            'nav1' => ['required'],
-         ]);
-    
-        $nav = new nav();
-        $nav->nav1 = $data->input('nav1');
-        $nav->save();
-        return redirect()->route('nav');
-    }
-    public function exit_nav($id, Request $data){
-    
-        $valid = $data->validate([
-            'nav1' => ['required']
-        ]); 
-        
-        $nav = nav::find($id);
-            $nav->link = $data->input('nav1');
-            $nav->save();
-    
-            return redirect()->route('nav');
-        }
-    
-        public function delete_nav($id){
-            nav::find($id)->delete();
-            return redirect()->route('nav');
-        }
-
         public function img_about(){
             $img = new ImgAbout();
             return view ('admin.img_about' , ['img' => $img->all()]);
@@ -118,5 +87,35 @@ class AdminController extends Controller
         public function delete_img_about($id){
             ImgAbout::find($id)->delete();
             return redirect()->route('img_about');
+        }
+
+
+        public function admin_nav(){
+            $nav = new nav();
+            return view ('admin.admin_nav' , ['nav' => $nav->all()]);
+        }  
+        public function add_nav(Request $data){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required'],
+            ]); 
+            $nav = new nav();
+            $nav->title = $data->input('title');
+            $nav->slogan = $data->input('slogan');
+            $nav->save();
+            return redirect()->route('admin_nav');
+        }
+    
+        public function exit_nav(Request $data, $id){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required']
+            ]); 
+            return redirect()->route('img_about');
+        }  
+    
+        public function delete_nav($id){
+            nav::find($id)->delete();
+            return redirect()->route('admin_nav');
         }
 }

@@ -14,32 +14,31 @@
                         </ol>
                     </nav>
                 </div>
-                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addicons">Изменить нав</button>
+                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addnav">Изменить нав</button>
             </div>
             <!-- End Page Title -->
         </div>
 
 
         <section class="section dashboard mt-2">
-            <div class="row">
-                @foreach ($navs as $item)
-                <div class="col-1">
+            <div class="row row-cols-3">
+                @foreach ($nav as $item)
+                <div class="col">
                     <div class="card info-card sales-card pb-0">
 
-                        <div class="filter">
-                            <a class="text" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                       <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exitnav{{$item->id}}">Редактировать</button></li>
+                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exitnav">Редактировать</button></li>
                                 <li><a class="dropdown-item" href="/delete_nav/{{$item->id}}">Удалить</a></li>
                             </ul>
-                        </div>
-
-                        <div class="card-body py-1" style="padding-left: 10px;">
-                            <div class="m-1">
-                                <li>{{$item->nav1}}</li>
                             </div>
-                        </div>
-
+    
+                            <div class="card-body">
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->title}}</h2>    
+                            <div style="background-image: url(storage/ImgAbout/{{$item->img}}); background-size: cover; height: 200px"></div>  
+                            </div>
+                    </section><!-- End Hero -->
                     </div>
                 </div>
                 <!-- End Sales Card -->
@@ -57,7 +56,7 @@
                                     @csrf
                                     <div class="form-floating mt-2">
                                         <input type="text" name="link" value="{{$item->link}}" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">Текст 1</label> @if($errors->has('nav1')) {{$errors->first('nav1')}} @endif
+                                        <label for="floatingInput">Текст 1</label> @if($errors->has('nav')) {{$errors->first('nav')}} @endif
                                     </div>
                                     <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
                                 </form>
@@ -87,8 +86,10 @@
                     @csrf
 
                     <div class="form-floating mt-2">
-                        <input type="text" name="link" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Текст</label> @if($errors->has('nav1')) {{$errors->first('nav1')}} @endif
+                        <input type="text" name="title" class="form-control" id="title" placeholder="name@example.com">
+                        <label for="title"></label> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                        <input type="text" name="slogan" class="form-control" id="slogan" placeholder="Слоган">
+                        <label for="slogan"></label> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
                     </div>
 
                     <button class="btn btn-lg btn-carousel mt-2 w-100">Добавить</button>
