@@ -18,10 +18,9 @@ class MainController extends Controller
         $img = new ImgAbout();
         $nav = new nav();
         $count = new Count();
-        return view('welcome', ['img' => $img->all(), 'nav' => $nav->all(), 'count' => $count->all()]);
         $service = new service();
         $title_service = new title_service();
         $section = new section();
-        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all()]);
+        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all()]);
     }
 }
