@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\ImgAbout;
+use App\Models\Count;
 
 
 class AdminController extends Controller
@@ -117,5 +118,62 @@ class AdminController extends Controller
         public function delete_nav($id){
             nav::find($id)->delete();
             return redirect()->route('admin_nav');
+        }
+        public function count(){
+            $count = new Count();
+            return view ('admin.count' , ['count' => $count->all()]);
+        }
+        public function add_count(Request $data){
+            $valid = $data->validate([
+                'Clients' => ['required'],
+                'SloganClients' => ['required'],
+                'Projects' => ['required'],
+                'SloganProjects' => ['required'],
+                'Support' => ['required'],
+                'SloganSupport' => ['required'],
+                'HardWorkers' => ['required'],
+                'SloganWorkers' => ['required']
+            ]); 
+    
+            $count = new Count();
+            $count->Clients = $data->input('Clients');
+            $count->SloganClients = $data->input('SloganClients');
+            $count->Projects = $data->input('Projects');
+            $count->SloganProjects = $data->input('SloganProjects');
+            $count->Support = $data->input('Support');
+            $count->SloganSupport = $data->input('SloganSupport');
+            $count->HardWorkers = $data->input('HardWorkers');
+            $count->SloganWorkers = $data->input('SloganWorkers');
+            $count->save();
+            return redirect()->route('count');
+        }
+        public function exit_count(Request $data, $id){
+            $valid = $data->validate([
+                'Clients' => ['required'],
+                'SloganClients' => ['required'],
+                'Projects' => ['required'],
+                'SloganProjects' => ['required'],
+                'Support' => ['required'],
+                'SloganSupport' => ['required'],
+                'HardWorkers' => ['required'],
+                'SloganWorkers' => ['required']
+            ]); 
+            
+            $count = Count::find($id);
+            $count->Clients = $data->input('Clients');
+            $count->SloganClients = $data->input('SloganClients');
+            $count->Projects = $data->input('Projects');
+            $count->SloganProjects = $data->input('SloganProjects');
+            $count->Support = $data->input('Support');
+            $count->SloganSupport = $data->input('SloganSupport');
+            $count->HardWorkers = $data->input('HardWorkers');
+            $count->SloganWorkers = $data->input('SloganWorkers');
+            $count->save();
+    
+            return redirect()->route('count');
+        } 
+        public function delete_count($id){
+            Count::find($id)->delete();
+            return redirect()->route('count');
         }
 }

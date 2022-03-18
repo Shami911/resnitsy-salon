@@ -28,3 +28,7 @@ Route::post('/add_img_about', [AdminController::class, 'add_img_about']);
 Route::post('/exit_img_about/{id}', [AdminController::class, 'exit_img_about']);
 Route::get('/delete_img_about/{id}', [AdminController::class, 'delete_img_about']);
 
+Route::get('/count', [AdminController::class, 'count'])->name('count');
+Route::post('/add_count', [AdminController::class, 'add_count']);
+Route::post('/exit_count/{id}', [AdminController::class, 'exit_count']);
+Route::get('/delete_count/{id}', [AdminController::class, 'delete_count']);

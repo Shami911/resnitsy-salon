@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ImgAbout;
 use App\Models\nav;
+use App\Models\Count;
+
 
 class MainController extends Controller
 {
@@ -13,6 +15,7 @@ class MainController extends Controller
     { 
         $img = new ImgAbout();
         $nav = new nav();
-        return view('welcome', ['img' => $img->all()], 'welcome', ['nav' => $nav->all()]);
+        $count = new Count();
+        return view('welcome', ['img' => $img->all(), 'nav' => $nav->all(), 'count' => $count->all()]);
     }
 }
