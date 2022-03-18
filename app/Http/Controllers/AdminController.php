@@ -10,6 +10,7 @@ use App\Models\ImgAbout;
 use App\Models\Count;
 use App\Models\service;
 use App\Models\title_service;
+use App\Models\Section;
 
 
 class AdminController extends Controller
@@ -91,33 +92,35 @@ class AdminController extends Controller
         }
 
 
-        public function admin_title_service(){
-            $title_service = new title_service();
-            return view ('admin.admin_title_service' , ['title_service' => $title_service->all()]);
+        public function admin_service(){
+            $service = new service();
+            return view ('admin.admin_service' , ['service' => $service->all()]);
         }  
-        public function add_title_service(Request $data){
+        public function add_service(Request $data){
             $valid = $data->validate([
+                'icon' => ['required'],
                 'title' => ['required'],
                 'slogan' => ['required'],
             ]); 
-            $title_service = new title_service();
-            $title_service->title = $data->input('title');
-            $title_service->slogan = $data->input('slogan');
-            $title_service->save();
-            return redirect()->route('admin_title_service');
+            $service = new service();
+            $service->title = $data->input('title');
+            $service->slogan = $data->input('slogan');
+            $service->save();
+            return redirect()->route('admin_service');
         }
     
-        public function exit_title_service(Request $data, $id){
+        public function exit_service(Request $data, $id){
             $valid = $data->validate([
+                'icon' => ['required'],
                 'title' => ['required'],
                 'slogan' => ['required'],
             ]); 
-            return redirect()->route('admin_title_service');
+            return redirect()->route('admin_service');
         }  
     
-        public function delete_title_service($id){
-            title_service::find($id)->delete();
-            return redirect()->route('admin_title_service');
+        public function delete_service($id){
+            service::find($id)->delete();
+            return redirect()->route('admin_service');
         }
         public function admin_nav(){
             $nav = new nav();
@@ -147,6 +150,7 @@ class AdminController extends Controller
             nav::find($id)->delete();
             return redirect()->route('admin_nav');
         }
+<<<<<<< HEAD
         public function count(){
             $count = new Count();
             return view ('admin.count' , ['count' => $count->all()]);
@@ -207,32 +211,66 @@ class AdminController extends Controller
         public function admin_service(){
             $service = new service();
             return view ('admin.admin_service' , ['service' => $service->all()]);
+=======
+
+        public function admin_section(){
+            $section = new Section();
+            return view ('admin.admin_section' , ['section' => $section->all()]);
+>>>>>>> 3493efbfe286be55fe5ae1705fd38d511cf07eac
         }  
-        public function add_service(Request $data){
+        public function add_section(Request $data){
             $valid = $data->validate([
-                'icon' => ['required'],
-                'card_title' => ['required'],
-                'card_slogan' => ['required'],
+                'button' => ['required'],
+                'title' => ['required'],
+                'slogan' => ['required'],
             ]); 
-            $service = new service();
-            $service->icon = $data->input('icon');
-            $service->card_title = $data->input('card_title');
-            $service->card_slogan = $data->input('card_slogan');
-            $service->save();
-            return redirect()->route('admin_service');
+            $section = new section();
+            $section->button = $data->input('button');
+            $section->title = $data->input('title');
+            $section->slogan = $data->input('slogan');
+            $section->save();
+            return redirect()->route('admin_section');
         }
     
-        public function exit_service(Request $data, $id){
+        public function exit_section(Request $data, $id){
             $valid = $data->validate([
-                'icon' => ['required'],
-                'card_title' => ['required'],
-                'card_slogan' => ['required']
+                'button' => ['required'],
+                'title' => ['required'],
+                'slogan' => ['required']
             ]); 
-            return redirect()->route('admin_service');
+            return redirect()->route('admin_section');
         }  
     
-        public function delete_service($id){
-            service::find($id)->delete();
-            return redirect()->route('admin_service');
+        public function delete_section($id){
+            Section::find($id)->delete();
+            return redirect()->route('admin_section');
+        }
+        public function admin_title_service(){
+            $title_service = new title_service();
+            return view ('admin.admin_title_service' , ['title_service' => $title_service->all()]);
+        }  
+        public function add_title_service(Request $data){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required'],
+            ]); 
+            $title_service = new title_service();
+            $title_service->title = $data->input('title');
+            $title_service->slogan = $data->input('slogan');
+            $title_service->save();
+            return redirect()->route('admin_title_service');
+        }
+    
+        public function exit_title_service(Request $data, $id){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required'],
+            ]); 
+            return redirect()->route('admin_title_service');
+        }  
+    
+        public function delete_title_service($id){
+            title_service::find($id)->delete();
+            return redirect()->route('admin_title_service');
         }
 }

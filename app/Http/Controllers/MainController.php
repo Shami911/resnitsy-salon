@@ -9,6 +9,7 @@ use App\Models\nav;
 use App\Models\Count;
 use App\Models\service;
 use App\Models\title_service;
+use App\Models\Section;
 
 class MainController extends Controller
 {
@@ -20,6 +21,7 @@ class MainController extends Controller
         return view('welcome', ['img' => $img->all(), 'nav' => $nav->all(), 'count' => $count->all()]);
         $service = new service();
         $title_service = new title_service();
-        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all()]);
+        $section = new section();
+        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all()]);
     }
 }

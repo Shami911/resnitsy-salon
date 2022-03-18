@@ -201,8 +201,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-cards.html">
-                            <i class="bi bi-circle"></i><span>Cards</span>
+                        <a href="/admin_section">
+                            <i class="bi bi-circle"></i><span>Секция</span>
                         </a>
                     </li>
                     <li>

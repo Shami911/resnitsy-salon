@@ -520,6 +520,7 @@ class ComposerStaticInitd96ad143d15a8d65be77843591e6da20
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Count' => __DIR__ . '/../..' . '/app/Models/Count.php',
         'App\\Models\\ImgAbout' => __DIR__ . '/../..' . '/app/Models/ImgAbout.php',
+        'App\\Models\\Section' => __DIR__ . '/../..' . '/app/Models/Section.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\nav' => __DIR__ . '/../..' . '/app/Models/nav.php',
         'App\\Models\\service' => __DIR__ . '/../..' . '/app/Models/service.php',

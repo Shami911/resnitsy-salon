@@ -43,3 +43,9 @@ Route::post('/add_title_service', [AdminController::class, 'add_title_service'])
 Route::post('/exit_title_service/{id}', [AdminController::class, 'exit_title_service']);
 Route::get('/delete_title_service/{id}', [AdminController::class, 'delete_title_service']);
 
+Route::get('/admin_section', [AdminController::class, 'admin_section'])->name('admin_section');
+Route::post('/add_section', [AdminController::class, 'add_section']);
+Route::post('/exit_section/{id}', [AdminController::class, 'exit_section']);
+Route::get('/delete_section/{id}', [AdminController::class, 'delete_section']);
+
+
