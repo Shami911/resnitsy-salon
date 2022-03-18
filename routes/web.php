@@ -28,3 +28,13 @@ Route::post('/add_img_about', [AdminController::class, 'add_img_about']);
 Route::post('/exit_img_about/{id}', [AdminController::class, 'exit_img_about']);
 Route::get('/delete_img_about/{id}', [AdminController::class, 'delete_img_about']);
 
+Route::get('/admin_service', [AdminController::class, 'admin_service'])->name('admin_service');
+Route::post('/add_service', [AdminController::class, 'add_service']);
+Route::post('/exit_service/{id}', [AdminController::class, 'exit_service']);
+Route::get('/delete_service/{id}', [AdminController::class, 'delete_service']);
+
+Route::get('/admin_title_service', [AdminController::class, 'admin_title_service'])->name('admin_title_service');
+Route::post('/add_title_service', [AdminController::class, 'add_title_service']);
+Route::post('/exit_title_service/{id}', [AdminController::class, 'exit_title_service']);
+Route::get('/delete_title_service/{id}', [AdminController::class, 'delete_title_service']);
+

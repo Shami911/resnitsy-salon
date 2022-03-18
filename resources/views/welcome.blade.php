@@ -116,76 +116,26 @@
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
-
+      @foreach($title_service as $item)
+        
+     
         <div class="section-title">
-          <h2>Cервис</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{$item->title}}</h2>
+          <p>{{$item->slogan}}</p>
         </div>
-
+@endforeach
         <div class="row">
-
+ @foreach($service as $item)
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue" style="width: 430px">
               <div class="icon">
-                <i class="bx bxl-dribbble"></i>
+                <i class="{{$item->icon}}"></i>
               </div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="">{{$item->card_title}}</a></h4>
+              <p>{{$item->card_slogan}}</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange" style="width: 430px">
-              <div class="icon">
-                <i class="bx bx-file"></i>
-              </div>
-              <h4><a href="">Sed Perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink" style="width: 430px">
-              <div class="icon">
-                <i class="bx bx-tachometer"></i>
-              </div>
-              <h4><a href="">Быстрая запись</a></h4>
-              <p>Есть срочная запись </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-yellow" style="width: 430px">
-              <div class="icon">
-                <i class="bx bx-layer"></i>
-              </div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-red" style="width: 430px">
-              <div class="icon">
-                <i class="bx bx-slideshow"></i>
-              </div>
-              <h4><a href="">Сборка наших работ</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-teal" style="width: 430px">
-              <div class="icon">
-                <i class="bx bx-arch"></i>
-              </div>
-              <h4><a href="">Divera Don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-            </div>
-          </div>
-
-        </div>
-
+ @endforeach
       </div>
     </section><!-- End Services Section -->
 

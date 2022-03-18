@@ -48,7 +48,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header d-flex border-0">
-                                <h3 class="modal-title ms-auto" id="exampleModalLabel">Редактирование нава</h3>
+                                <h3 class="modal-title ms-auto" id="exitnav">Редактирование нава</h3>
                                 <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
