@@ -32,3 +32,14 @@ Route::get('/count', [AdminController::class, 'count'])->name('count');
 Route::post('/add_count', [AdminController::class, 'add_count']);
 Route::post('/exit_count/{id}', [AdminController::class, 'exit_count']);
 Route::get('/delete_count/{id}', [AdminController::class, 'delete_count']);
+
+Route::get('/admin_service', [AdminController::class, 'admin_service'])->name('admin_service');
+Route::post('/add_service', [AdminController::class, 'add_service']);
+Route::post('/exit_service/{id}', [AdminController::class, 'exit_service']);
+Route::get('/delete_service/{id}', [AdminController::class, 'delete_service']);
+
+Route::get('/admin_title_service', [AdminController::class, 'admin_title_service'])->name('admin_title_service');
+Route::post('/add_title_service', [AdminController::class, 'add_title_service']);
+Route::post('/exit_title_service/{id}', [AdminController::class, 'exit_title_service']);
+Route::get('/delete_title_service/{id}', [AdminController::class, 'delete_title_service']);
+

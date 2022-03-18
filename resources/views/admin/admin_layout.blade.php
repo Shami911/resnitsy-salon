@@ -191,13 +191,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-breadcrumbs.html">
-                            <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+                        <a href="/admin_title_service">
+                            <i class="bi bi-circle"></i><span>Название сервиса</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-buttons.html">
-                            <i class="bi bi-circle"></i><span>Buttons</span>
+                        <a href="/admin_service">
+                            <i class="bi bi-circle"></i><span>Сервис</span>
                         </a>
                     </li>
                     <li>
