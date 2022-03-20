@@ -11,14 +11,15 @@ use App\Models\Count;
 use App\Models\service;
 use App\Models\title_service;
 use App\Models\Section;
-
+use App\Models\Reviews;
+use App\Models\Comment;
 
 class AdminController extends Controller
 {
     public function admin_panel(){
         return view('admin.admin_panel');
     }
-  
+        // IMG ABOUT START
         public function img_about(){
             $img = new ImgAbout();
             return view ('admin.img_about' , ['img' => $img->all()]);
@@ -90,8 +91,9 @@ class AdminController extends Controller
             ImgAbout::find($id)->delete();
             return redirect()->route('img_about');
         }
+        // IMG ABOUT END
 
-
+        // SERVICE START
         public function admin_service(){
             $service = new service();
             return view ('admin.admin_service' , ['service' => $service->all()]);
@@ -115,6 +117,11 @@ class AdminController extends Controller
                 'title' => ['required'],
                 'slogan' => ['required'],
             ]); 
+            $service = service::find($id);
+            $service->icon = $data->input('icon');
+            $service->title = $data->input('title');
+            $service->slogan = $data->input('slogan');
+            $service->save();
             return redirect()->route('admin_service');
         }  
     
@@ -122,6 +129,9 @@ class AdminController extends Controller
             service::find($id)->delete();
             return redirect()->route('admin_service');
         }
+        // SERVICE END
+
+        // NAV START
         public function admin_nav(){
             $nav = new nav();
             return view ('admin.admin_nav' , ['nav' => $nav->all()]);
@@ -143,14 +153,20 @@ class AdminController extends Controller
                 'title' => ['required'],
                 'slogan' => ['required']
             ]); 
-            return redirect()->route('img_about');
+            $nav = nav::find($id);
+            $nav->title = $data->input('title');
+            $nav->slogan = $data->input('slogan');
+            $nav->save();
+            return redirect()->route('admin_nav');
         }  
     
         public function delete_nav($id){
             nav::find($id)->delete();
             return redirect()->route('admin_nav');
         }
-<<<<<<< HEAD
+        // NAV END
+
+        // COUNT START
         public function count(){
             $count = new Count();
             return view ('admin.count' , ['count' => $count->all()]);
@@ -208,15 +224,13 @@ class AdminController extends Controller
             Count::find($id)->delete();
             return redirect()->route('count');
         }
-        public function admin_service(){
-            $service = new service();
-            return view ('admin.admin_service' , ['service' => $service->all()]);
-=======
+        // COUNT END
 
+
+        // SECTION START
         public function admin_section(){
             $section = new Section();
-            return view ('admin.admin_section' , ['section' => $section->all()]);
->>>>>>> 3493efbfe286be55fe5ae1705fd38d511cf07eac
+            return view ('admin.admin_section' , ['section' => $section->all()]); 
         }  
         public function add_section(Request $data){
             $valid = $data->validate([
@@ -224,7 +238,7 @@ class AdminController extends Controller
                 'title' => ['required'],
                 'slogan' => ['required'],
             ]); 
-            $section = new section();
+            $section = new Section();
             $section->button = $data->input('button');
             $section->title = $data->input('title');
             $section->slogan = $data->input('slogan');
@@ -238,6 +252,11 @@ class AdminController extends Controller
                 'title' => ['required'],
                 'slogan' => ['required']
             ]); 
+            $section = Section::find($id);
+            $section->button = $data->input('button');
+            $section->title = $data->input('title');
+            $section->slogan = $data->input('slogan');
+            $section->save();
             return redirect()->route('admin_section');
         }  
     
@@ -245,6 +264,9 @@ class AdminController extends Controller
             Section::find($id)->delete();
             return redirect()->route('admin_section');
         }
+        // SECTION END
+
+        // TITLE SERVICE START
         public function admin_title_service(){
             $title_service = new title_service();
             return view ('admin.admin_title_service' , ['title_service' => $title_service->all()]);
@@ -266,6 +288,10 @@ class AdminController extends Controller
                 'title' => ['required'],
                 'slogan' => ['required'],
             ]); 
+            $title_service = title_service::find($id);
+            $title_service->title = $data->input('title');
+            $title_service->slogan = $data->input('slogan');
+            $title_service->save();
             return redirect()->route('admin_title_service');
         }  
     
@@ -273,4 +299,103 @@ class AdminController extends Controller
             title_service::find($id)->delete();
             return redirect()->route('admin_title_service');
         }
+        // TITLE SERVICE END
+
+        // TEST START
+        public function reviews(){
+            $reviews = new Reviews();
+            return view ('admin.reviews' , ['reviews' => $reviews->all()]);
+        }  
+        public function add_reviews(Request $data){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required'],
+            ]); 
+            $reviews = new Reviews();
+            $reviews->title = $data->input('title');
+            $reviews->slogan = $data->input('slogan');
+            $reviews->save();
+            return redirect()->route('reviews');
+        }
+    
+        public function exit_reviews(Request $data, $id){
+            $valid = $data->validate([
+                'title' => ['required'],
+                'slogan' => ['required']
+            ]); 
+            $reviews = Reviews::find($id);
+            $reviews->title = $data->input('title');
+            $reviews->slogan = $data->input('slogan');
+            $reviews->save();
+            return redirect()->route('reviews');
+        }  
+    
+        public function delete_reviews($id){
+            Reviews::find($id)->delete();
+            return redirect()->route('reviews');
+        }
+
+        //TEST END
+
+        // Комментарии start
+        public function comment(){
+            $comment = new Comment();
+            return view ('admin.comment' , ['comment' => $comment->all()]);
+        }  
+        public function add_comment(Request $data){
+            $valid = $data->validate([
+                'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                'comment' => ['required'],
+                'name' => ['required'],
+                'work' => ['required'],
+            ]); 
+    
+            $file = $data->file('img');
+            $upload_folder = 'public/Comment/'; //Создается автоматически
+            $filename = $file->getClientOriginalName(); //Сохраняем исходное название изображения
+            Storage::putFileAs($upload_folder, $file, $filename); 
+    
+            $comment = new Comment();
+            $comment->img = $filename;
+            $comment-> comment= $data->input('comment');
+            $comment->name = $data->input('name');
+            $comment->work = $data->input('work');
+            $comment->save();
+            return redirect()->route('comment');
+        }
+    
+        public function exit_comment(Request $data, $id){
+            $valid = $data->validate([
+                'img' => ['image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                'comment' => ['required'],
+                'name' => ['required'],
+                'work' => ['required'],
+            ]); 
+            
+            $comment = Comment::find($id);
+            if($data->file('img') != '') {
+                $upload_folder = 'public/Comment/'; //Создается автоматически
+                $file = $data->file('img');
+                $filename = $file->getClientOriginalName();
+                Storage::delete($upload_folder . '/' . $comment->img);
+                Storage::putFileAs($upload_folder, $file, $filename);    
+                $comment->img = $filename;
+                Storage::putFileAs($upload_folder, $file, $filename); 
+            } else {
+                $comment->img = $comment->img;
+            }
+            
+            $comment-> comment= $data->input('comment');
+            $comment->name = $data->input('name');
+            $comment->work = $data->input('work');
+            $comment->save();
+    
+            return redirect()->route('comment');
+        }  
+    
+        public function delete_comment($id){
+            Comment::find($id)->delete();
+            return redirect()->route('comment');
+        }
+        // IMG ABOUT END
 }

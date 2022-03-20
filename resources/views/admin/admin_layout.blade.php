@@ -206,13 +206,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-carousel.html">
-                            <i class="bi bi-circle"></i><span>Carousel</span>
+                        <a href="/reviews">
+                            <i class="bi bi-circle"></i><span>Отзывы</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-list-group.html">
-                            <i class="bi bi-circle"></i><span>List group</span>
+                        <a href="/comment">
+                            <i class="bi bi-circle"></i><span>Комментарии</span>
                         </a>
                     </li>
                     <li>

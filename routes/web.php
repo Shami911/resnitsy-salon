@@ -48,4 +48,14 @@ Route::post('/add_section', [AdminController::class, 'add_section']);
 Route::post('/exit_section/{id}', [AdminController::class, 'exit_section']);
 Route::get('/delete_section/{id}', [AdminController::class, 'delete_section']);
 
+Route::get('/reviews', [AdminController::class, 'reviews'])->name('reviews');
+Route::post('/add_reviews', [AdminController::class, 'add_reviews']);
+Route::post('/exit_reviews/{id}', [AdminController::class, 'exit_reviews']);
+Route::get('/delete_reviews/{id}', [AdminController::class, 'delete_reviews']);
+
+Route::get('/comment', [AdminController::class, 'comment'])->name('comment');
+Route::post('/add_comment', [AdminController::class, 'add_comment']);
+Route::post('/exit_comment/{id}', [AdminController::class, 'exit_comment']);
+Route::get('/delete_comment/{id}', [AdminController::class, 'delete_comment']);
+
 

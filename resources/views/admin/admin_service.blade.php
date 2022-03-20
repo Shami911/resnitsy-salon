@@ -57,13 +57,13 @@
                                     @csrf
                                     <div class="form-floating mt-2">
 
-                                        <input type="text" name="icon" value="{{$item->icon}}" class="form-control" id="icon" placeholder="name@example.com">
+                                        <input type="text" name="icon" value="" class="form-control" id="icon" placeholder="name@example.com">
                                         <label for="icon">Иконка</label> @if($errors->has('icon')) {{$errors->first('icon')}} @endif
 
-                                        <input type="text" name="card_title" value="{{$item->card_title}}" class="form-control" id="card_title" placeholder="name@example.com">
+                                        <input type="text" name="card_title" value="" class="form-control" id="card_title" placeholder="name@example.com">
                                         <label for="card_title"></label> @if($errors->has('card_title')) {{$errors->first('card_title')}} @endif
 
-                                        <input type="text" name="card_slogan" value="{{$item->card_slogan}}" class="form-control" id="card_slogan" placeholder="name@example.com">
+                                        <input type="text" name="card_slogan" value="" class="form-control" id="card_slogan" placeholder="name@example.com">
                                         <label for="card_slogan"></label> @if($errors->has('card_slogan')) {{$errors->first('card_slogan')}} @endif
                                     </div>
                                     <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
@@ -94,7 +94,7 @@
                     @csrf
 
                     <div class="form-floating mt-2">
-                        <input type="text" name="icon" value="{{$item->icon}}" class="form-control" id="icon" placeholder="name@example.com">
+                        <input type="text" name="icon" value="" class="form-control" id="icon" placeholder="name@example.com">
                         <label for="icon">Иконка</label> @if($errors->has('icon')) {{$errors->first('icon')}} @endif
 
                     

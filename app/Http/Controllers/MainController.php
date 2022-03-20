@@ -10,6 +10,8 @@ use App\Models\Count;
 use App\Models\service;
 use App\Models\title_service;
 use App\Models\Section;
+use App\Models\Reviews;
+use App\Models\Comment;
 
 class MainController extends Controller
 {
@@ -20,7 +22,9 @@ class MainController extends Controller
         $count = new Count();
         $service = new service();
         $title_service = new title_service();
-        $section = new section();
-        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all()]);
+        $section = new Section();
+        $reviews = new Reviews();
+        $comment = new Comment();
+        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all(), 'reviews' => $reviews->all(), 'comment' => $comment->all()]);
     }
 }
