@@ -48,4 +48,22 @@ Route::post('/add_section', [AdminController::class, 'add_section']);
 Route::post('/exit_section/{id}', [AdminController::class, 'exit_section']);
 Route::get('/delete_section/{id}', [AdminController::class, 'delete_section']);
 
+Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio');
+Route::post('/add_portfolio', [AdminController::class, 'add_portfolio']);
+Route::post('/exit_sportfolio/{id}', [AdminController::class, 'exit_portfolio']);
+Route::get('/delete_portfolio/{id}', [AdminController::class, 'delete_portfolio']);
 
+Route::get('/PortfolioCard', [AdminController::class, 'PortfolioCard'])->name('PortfolioCard');
+Route::post('/add_CardPotfolio', [AdminController::class, 'add_CardPotfolio']);
+Route::post('/exit_CardPotfolio/{id}', [AdminController::class, 'exit_CardPotfolio']);
+Route::get('/delete_CardPotfoliot/{id}', [AdminController::class, 'delete_CardPotfoliot']);
+
+Route::get('/admin_card_app', [AdminController::class, 'admin_card_app'])->name('admin_card_app');
+Route::post('/add_CardApp', [AdminController::class, 'add_CardApp']);
+Route::post('/exit_CardApp/{id}', [AdminController::class, 'exit_CardApp']);
+Route::get('/delete_CardApp/{id}', [AdminController::class, 'delete_CardApp']);
+
+Route::get('/admin_card_web', [AdminController::class, 'admin_card_web'])->name('admin_card_web');
+Route::post('/add_card_web', [AdminController::class, 'add_card_web']);
+Route::post('/exit_card_web/{id}', [AdminController::class, 'exit_card_web']);
+Route::get('/delete_card_web/{id}', [AdminController::class, 'delete_card_web']);

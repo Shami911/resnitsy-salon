@@ -10,6 +10,11 @@ use App\Models\Count;
 use App\Models\service;
 use App\Models\title_service;
 use App\Models\Section;
+use App\Models\Portfolio;
+use App\Models\CardPortfolio;
+use App\Models\CardApp;
+use App\Models\CardWeb;
+
 
 class MainController extends Controller
 {
@@ -21,6 +26,10 @@ class MainController extends Controller
         $service = new service();
         $title_service = new title_service();
         $section = new section();
-        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all()]);
+        $portfolio = new Portfolio();
+        $card = new CardPortfolio();
+        $cardApp = new CardApp();
+        $cardWeb = new CardWeb();
+        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all(), 'portfolio' => $portfolio->all(), 'card' => $card->all(), 'cardApp' => $cardApp->all(), 'cardWeb' => $cardWeb->all()]);
     }
 }

@@ -43,7 +43,7 @@
   <header id="header" class="fixed-top header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Салон</a></h1>
+      <h1 class="logo"><a href="/">Салон</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -174,11 +174,11 @@
         <div class="col-lg-2 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">О нас</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Сервис</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Прайс</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Как найти нас</a></li>
           </ul>
         </div>
 
