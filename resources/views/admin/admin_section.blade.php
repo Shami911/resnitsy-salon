@@ -55,15 +55,20 @@
                         <form action="/exit_section/{{$item->id}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-floating mt-2">
-                                <input type="text" name="button" class="form-control" id="button" placeholder="name@example.com">
-                                <label for="button"></label> @if($errors->has('button')) {{$errors->first('button')}} @endif
-
-                                <input type="text" name="title" value="{{$item->title}}" class="form-control" id="title" placeholder="name@example.com">
-                                <label for="title">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
-
-                                <input type="text" name="slogan" value="{{$item->slogan}}" class="form-control" id="slogan" placeholder="name@example.com">
-                                <label for="slogan">Слоган</label> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                                <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
+                                <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
                             </div>
+                            <div class="form-floating mt-2">
+                                <div>
+                                    <input type="text" placeholder="Название" name="title" class="form-control mt-1"> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                                </div>
+                            </div>
+                            <div class="form-floating mt-2">
+                                <div>
+                                    <input type="text" placeholder="Cлоган" name="slogan" class="form-control mt-1"> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                                </div>
+                            </div>
+
                             <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
                         </form>
                     </div>
@@ -84,24 +89,27 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header d-flex border-0">
-                <h3 class="modal-title ms-auto" id="addsection">Добавление нава</h3>
+                <h3 class="modal-title ms-auto" id="addsection">Добавление</h3>
                 <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="/add_section" method="POST" enctype="multipart/form-data">
                     @csrf
-
                     <div class="form-floating mt-2">
-                        <input type="text" name="button" class="form-control" id="button" placeholder="name@example.com">
-                        <label for="button"></label> @if($errors->has('button')) {{$errors->first('button')}} @endif
-
-                        <input type="text" name="title" class="form-control" id="title" placeholder="name@example.com">
-                        <label for="title"></label> @if($errors->has('title')) {{$errors->first('title')}} @endif
-
-                        <input type="text" name="slogan" class="form-control" id="slogan" placeholder="Слоган">
-                        <label for="slogan"></label> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                        <div>
+                            <input type="text" placeholder="Кнопка" name="button" class="form-control mt-1"> @if($errors->has('button')) {{$errors->first('button')}} @endif
+                        </div>
                     </div>
-
+                    <div class="form-floating mt-2">
+                        <div>
+                            <input type="text" placeholder="Название" name="title" class="form-control mt-1"> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                        </div>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <div>
+                            <input type="text" placeholder="Cлоган" name="slogan" class="form-control mt-1"> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                        </div>
+                    </div>
                     <button class="btn btn-lg btn-carousel mt-2 w-100">Добавить</button>
                 </form>
             </div>

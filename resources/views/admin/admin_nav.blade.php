@@ -45,30 +45,44 @@
         <!-- End Sales Card -->
 
         <!-- Modal Exit Carousel -->
-        <div class="modal fade" id="exitnav{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exitnav" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header d-flex border-0">
-                        <h3 class="modal-title ms-auto" id="exitnav">Редактирование нава</h3>
+                        <h3 class="modal-title ms-auto" id="exitnav">Редактирование</h3>
                         <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/exit_nav/{{$item->id}}" method="POST" enctype="multipart/form-data">
+                        <form action="/exit_nav/{{$item->id}}" method="POST">
                             @csrf
-                            <div class="form-floating mt-2">
-                                <input type="text" name="link" value="{{$item->link}}" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Текст 1</label> @if($errors->has('nav')) {{$errors->first('nav')}} @endif
+                            <div>
+                                <div class="form-floating mt-2">
+                                    <input type="text" name="title" value="" class="form-control" id="title" placeholder="name@example.com">
+                                    <label for="title">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                                </div>
+                                <div class="form-floating mt-2">
+                                    <input type="text" name="slogan" value="" class="form-control" id="slogan" placeholder="name@example.com">
+                                    <label for="slogan">Слоган</label> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                                </div>
+                                <div class="form-floating mt-2">
+                                    <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
+                                    <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
+                                </div>
+
                             </div>
-                            <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
-                        </form>
                     </div>
+
+                    <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
+                    </form>
                 </div>
             </div>
         </div>
-        @endforeach
         </div>
-        <!-- End Left side columns -->
-        </section>
+
+        @endforeach
+    </div>
+    <!-- End Left side columns -->
+    </section>
     </div>
 
 </main>
@@ -95,6 +109,10 @@
                         <div>
                             <input type="text" placeholder="Cлоган" name="slogan" class="form-control mt-1"> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
                         </div>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
+                        <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
                     </div>
             </div>
 

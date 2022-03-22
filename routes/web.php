@@ -58,4 +58,38 @@ Route::post('/add_comment', [AdminController::class, 'add_comment']);
 Route::post('/exit_comment/{id}', [AdminController::class, 'exit_comment']);
 Route::get('/delete_comment/{id}', [AdminController::class, 'delete_comment']);
 
+Route::get('/main_faq', [AdminController::class, 'main_faq'])->name('main_faq');
+Route::post('/add_faq', [AdminController::class, 'add_faq']);
+Route::post('/exit_faq/{id}', [AdminController::class, 'exit_faq']);
+Route::get('/delete_faq/{id}', [AdminController::class, 'delete_faq']);
 
+Route::get('/title_faq', [AdminController::class, 'title_faq'])->name('title_faq');
+Route::post('/add_title_faq', [AdminController::class, 'add_title_faq']);
+Route::post('/exit_title_faq/{id}', [AdminController::class, 'exit_title_faq']);
+Route::get('/delete_title_faq/{id}', [AdminController::class, 'delete_title_faq']);
+
+
+Route::get('/pricing_title', [AdminController::class, 'pricing_title'])->name('pricing_title');
+Route::post('/add_pricing_title', [AdminController::class, 'add_pricing_title']);
+Route::post('/exit_pricing_title/{id}', [AdminController::class, 'exit_pricing_title']);
+Route::get('/delete_pricing_title/{id}', [AdminController::class, 'delete_pricing_title']);
+
+Route::get('/price', [AdminController::class, 'price'])->name('price');
+Route::post('/add_price', [AdminController::class, 'add_price']);
+Route::post('/exit_price/{id}', [AdminController::class, 'exit_price']);
+Route::get('/delete_price/{id}', [AdminController::class, 'delete_price']);
+
+Route::get('/price_two', [AdminController::class, 'price_two'])->name('price_two');
+Route::post('/add_price_two', [AdminController::class, 'add_price_two']);
+Route::post('/exit_price_two/{id}', [AdminController::class, 'exit_price_two']);
+Route::get('/delete_price_two/{id}', [AdminController::class, 'delete_price_two']);
+
+Route::get('/price_three', [AdminController::class, 'price_three'])->name('price_three');
+Route::post('/add_price_three', [AdminController::class, 'add_price_three']);
+Route::post('/exit_price_three/{id}', [AdminController::class, 'exit_price_three']);
+Route::get('/delete_price_three/{id}', [AdminController::class, 'delete_price_three']);
+
+Route::get('/price_four', [AdminController::class, 'price_four'])->name('price_four');
+Route::post('/add_price_four', [AdminController::class, 'add_price_four']);
+Route::post('/exit_price_four/{id}', [AdminController::class, 'exit_price_four']);
+Route::get('/delete_price_four/{id}', [AdminController::class, 'delete_price_four']);

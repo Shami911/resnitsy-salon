@@ -145,8 +145,8 @@
             @csrf
     
                 <div class="form-floating mt-2">
-                    <input type="text" name="Clients" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Просмотры</label>
+                    <input type="text" name="Clients" value="Просмотры" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput"></label>
                     @if($errors->has('Clients'))
                         {{$errors->first('Clients')}}
                     @endif
@@ -161,8 +161,8 @@
                 </div>
 
                 <div class="form-floating mt-2">
-                    <input type="text" name="Projects" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Количество выполненых работ</label>
+                    <input type="text" name="Projects" value="Количество выполненых работ" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput"></label>
                     @if($errors->has('Projects'))
                         {{$errors->first('Projects')}}
                     @endif
@@ -177,8 +177,8 @@
                 </div>
 
                 <div class="form-floating mt-2">
-                    <input type="text" name="Support" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Количество отзывов</label>
+                    <input type="text" name="Support" value="Количество отзывов" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput"></label>
                     @if($errors->has('Support'))
                         {{$errors->first('Support')}}
                     @endif
@@ -193,8 +193,8 @@
                 </div>
 
                 <div class="form-floating mt-2">
-                    <input type="text" name="HardWorkers" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Число оказываемых услуг</label>
+                    <input type="text" name="HardWorkers" value="Число оказываемых услуг" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput"></label>
                     @if($errors->has('HardWorkers'))
                         {{$errors->first('HardWorkers')}}
                     @endif
