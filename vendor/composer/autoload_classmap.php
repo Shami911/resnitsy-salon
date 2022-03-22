@@ -20,6 +20,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+<<<<<<< HEAD
     'App\\Models\\ButtonCard' => $baseDir . '/app/Models/ButtonCard.php',
     'App\\Models\\ButtonWeb' => $baseDir . '/app/Models/ButtonWeb.php',
     'App\\Models\\CardApp' => $baseDir . '/app/Models/CardApp.php',
@@ -28,7 +29,20 @@ return array(
     'App\\Models\\Count' => $baseDir . '/app/Models/Count.php',
     'App\\Models\\ImgAbout' => $baseDir . '/app/Models/ImgAbout.php',
     'App\\Models\\Portfolio' => $baseDir . '/app/Models/Portfolio.php',
+=======
+    'App\\Models\\Comment' => $baseDir . '/app/Models/Comment.php',
+    'App\\Models\\Count' => $baseDir . '/app/Models/Count.php',
+    'App\\Models\\ImgAbout' => $baseDir . '/app/Models/ImgAbout.php',
+    'App\\Models\\MainFaq' => $baseDir . '/app/Models/MainFaq.php',
+    'App\\Models\\Price' => $baseDir . '/app/Models/Price.php',
+    'App\\Models\\PriceFour' => $baseDir . '/app/Models/PriceFour.php',
+    'App\\Models\\PriceThree' => $baseDir . '/app/Models/PriceThree.php',
+    'App\\Models\\PriceTwo' => $baseDir . '/app/Models/PriceTwo.php',
+    'App\\Models\\PricingTitle' => $baseDir . '/app/Models/PricingTitle.php',
+    'App\\Models\\Reviews' => $baseDir . '/app/Models/Reviews.php',
+>>>>>>> 4564f87a3dfd56f788f9d52891de25fdf051fda5
     'App\\Models\\Section' => $baseDir . '/app/Models/Section.php',
+    'App\\Models\\TitleFaq' => $baseDir . '/app/Models/TitleFaq.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\nav' => $baseDir . '/app/Models/nav.php',
     'App\\Models\\service' => $baseDir . '/app/Models/service.php',

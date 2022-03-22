@@ -207,13 +207,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-carousel.html">
-                            <i class="bi bi-circle"></i><span>Carousel</span>
+                        <a href="/reviews">
+                            <i class="bi bi-circle"></i><span>Отзывы</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-list-group.html">
-                            <i class="bi bi-circle"></i><span>List group</span>
+                        <a href="/comment">
+                            <i class="bi bi-circle"></i><span>Комментарии</span>
                         </a>
                     </li>
                     <li>
@@ -227,23 +227,38 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-pagination.html">
-                            <i class="bi bi-circle"></i><span>Pagination</span>
+                        <a href="/title_faq">
+                            <i class="bi bi-circle"></i><span>Название Faq</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-progress.html">
-                            <i class="bi bi-circle"></i><span>Progress</span>
+                        <a href="/main_faq">
+                            <i class="bi bi-circle"></i><span>Часто задаваемые вопросы</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-spinners.html">
-                            <i class="bi bi-circle"></i><span>Spinners</span>
+                        <a href="/pricing_title">
+                            <i class="bi bi-circle"></i><span>Название прайса</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-tooltips.html">
-                            <i class="bi bi-circle"></i><span>Tooltips</span>
+                        <a href="/price">
+                            <i class="bi bi-circle"></i><span>Прайс</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/price_two">
+                            <i class="bi bi-circle"></i><span>Прайс 2</span>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="/price_three">
+                            <i class="bi bi-circle"></i><span>Прайс 3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/price_four">
+                            <i class="bi bi-circle"></i><span>Прайс 4</span>
                         </a>
                     </li>
                 </ul>

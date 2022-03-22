@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('icon');
-            $table->string('card_title');
-            $table->string('card_slogan');
+            $table->string('title');
+            $table->string('slogan');
             $table->timestamps();
         });
     }

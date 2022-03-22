@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('navs', function (Blueprint $table) {
+        Schema::create('title_faqs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slogan');
-            $table->string('button');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('navs');
+        Schema::dropIfExists('title_faqs');
     }
 };
