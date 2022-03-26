@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('icons', function (Blueprint $table) {
             $table->id();
-            $table->string('icon');
+            $table->string('img');
             $table->timestamps();
         });
     }
