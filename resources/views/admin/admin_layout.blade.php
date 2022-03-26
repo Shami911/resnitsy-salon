@@ -25,6 +25,7 @@
     <link href="/assets_admin/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="/assets_admin/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="/assets_admin/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="/assets_admin/css/admin.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets_admin/css/style.css" rel="stylesheet">
@@ -221,13 +222,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="components-modal.html">
-                            <i class="bi bi-circle"></i><span>Modal</span>
+                        <a href="/portfolio">
+                            <i class="bi bi-circle"></i><span>Портфолио</span>
                         </a>
                     </li>
                     <li>
-                        <a href="components-tabs.html">
-                            <i class="bi bi-circle"></i><span>Tabs</span>
+                        <a href="/">
+                            <i class="bi bi-circle"></i><span>Свободен</span>
                         </a>
                     </li>
                     <li>
@@ -286,27 +287,27 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-journal-text"></i><span>Карты</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Form Elements</span>
+                        <a href="/admin_card_app">
+                            <i class="bi bi-circle"></i><span>Первый ряд</span>
                         </a>
                     </li>
                     <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
+                        <a href="/PortfolioCard">
+                            <i class="bi bi-circle"></i><span>Второй ряд</span>
                         </a>
                     </li>
                     <li>
-                        <a href="forms-editors.html">
-                            <i class="bi bi-circle"></i><span>Form Editors</span>
+                        <a href="/admin_card_web">
+                            <i class="bi bi-circle"></i><span>Третий ряд</span>
                         </a>
                     </li>
                     <li>
                         <a href="forms-validation.html">
-                            <i class="bi bi-circle"></i><span>Form Validation</span>
+                            <i class="bi bi-circle"></i><span>Все</span>
                         </a>
                     </li>
                 </ul>
@@ -315,17 +316,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Команда Реклама</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="tables-general.html">
-                            <i class="bi bi-circle"></i><span>General Tables</span>
+                        <a href="/admin_team">
+                            <i class="bi bi-circle"></i><span>Приветствие</span>
                         </a>
                     </li>
                     <li>
-                        <a href="tables-data.html">
-                            <i class="bi bi-circle"></i><span>Data Tables</span>
+                        <a href="/admin_teamCard">
+                            <i class="bi bi-circle"></i><span>Карта</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin_icon_link">
+                            <i class="bi bi-circle"></i><span>Иконки</span>
                         </a>
                     </li>
                 </ul>
