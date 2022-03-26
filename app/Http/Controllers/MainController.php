@@ -23,6 +23,9 @@ use App\Models\Price;
 use App\Models\PriceTwo;
 use App\Models\PriceThree;
 use App\Models\PriceFour;
+use App\Models\Team;
+use App\Models\CardTeam;
+use App\Models\IconCard;
 
 
 class MainController extends Controller
@@ -34,7 +37,11 @@ class MainController extends Controller
         $count = new Count();
         $service = new service();
         $title_service = new title_service();
-
+        $section = new section();
+        $portfolio = new Portfolio();
+        $card = new CardPortfolio();
+        $cardApp = new CardApp();
+        $cardWeb = new CardWeb();
         $section = new Section();
         $reviews = new Reviews();
         $comment = new Comment();
@@ -45,9 +52,11 @@ class MainController extends Controller
         $price_two = new PriceTwo();
         $price_three = new PriceThree();
         $price_four = new PriceFour();
-        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all(), 'reviews' => $reviews->all(), 'comment' => $comment->all(), 'faq' => $faq->all(), 'title_faq' => $title_faq->all()
+        $team = new Team();
+        $Cardteam = new CardTeam();
+        $IconCard = new IconCard();
+        return view('welcome', ['img' => $img->all(),'nav' => $nav->all(),'service' => $service->all(),'title_service' => $title_service->all(),'section' => $section->all(), 'count' => $count->all(), 'reviews' => $reviews->all(), 'comment' => $comment->all(), 'faq' => $faq->all(), 'title_faq' => $title_faq->all(), 'portfolio' => $portfolio->all(), 'card' => $card->all(), 'cardApp' => $cardApp->all(), 'cardWeb' => $cardWeb->all()
         , 'pricing_title' => $pricing_title->all(), 'price' => $price->all(), 'price_two' => $price_two->all()
-        , 'price_three' => $price_three->all(), 'price_four' => $price_four->all()]);
-
+        , 'price_three' => $price_three->all(), 'price_four' => $price_four->all(),'team' => $team->all(), 'Cardteam' => $Cardteam->all(), 'IconCard' => $IconCard->all()]);
     }
 }

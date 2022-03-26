@@ -7,11 +7,11 @@
 <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container position-relative">
         @foreach($nav as $item)
-        <h1>{{$item->title}}</h1>
-        <h2>{{$item->slogan}}</h2>
+            <h1>{{$item->title}}</h1>
+            <h2>{{$item->slogan}}</h2>
         <a href="#about" class="btn-get-started scrollto">{{$item->button}}</a>
+        @endforeach
     </div>
-    @endforeach
 </section>
 <!-- End Hero -->
 
@@ -187,7 +187,7 @@
                       </div>
                   </div>
                   <!-- End testimonial item -->
-                  @endforeach >
+                  @endforeach 
 
               </div>
               <div class="swiper-pagination"></div>
@@ -269,32 +269,31 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
         <div class="container">
-
+@foreach ($team as $item)
             <div class="section-title">
-                <h2>Team</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
-                    quidem hic quas.</p>
+                <h2>{{$item->title}}</h2>
+                <p>{{$item->description}}</p>
             </div>
-
+@endforeach
             <div class="row">
-
+@foreach ($Cardteam as $item)
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                            <img src="storage/cardTeam/{{$item->img}}" class="img-fluid" style="width: 100%; height: 310px" alt="">
+    @foreach ($IconCard as $item)
                             <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+                                <a href="{{$item->link}}"><img src="storage/IconCard/{{$item->img}}" style="width: 25px" alt=""></a>
                             </div>
+    @endforeach
                         </div>
                         <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
+                            <h4>{{$item->title}}</h4>
+                            <span>{{$item->description}}</span>
                         </div>
                     </div>
                 </div>
+@endforeach
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member">
@@ -451,7 +450,8 @@
             <div class="section-title">
                 <h2>{{$item->title}}</h2>
             </div>
-            @endforeach @foreach($faq as $item)
+            @endforeach
+             @foreach($faq as $item)
             <div class="faq-list">
                 <ul>
                     <li data-aos="fade-up">
@@ -464,9 +464,8 @@
                     </li>
                 </ul>
             </div>
-
+            @endforeach
         </div>
-        @endforeach
     </section>
     <!-- End Frequently Asked Questions Section -->
     <!-- End Frequently Asked Questions Section -->

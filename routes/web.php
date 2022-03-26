@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [MainController::class, 'welcome']);
-Route::get('/admin_panel', [AdminController::class, 'admin_panel']);
+Route::get('/', [MainController::class, 'welcome'])->name('welcome');
+Route::get('/admin_panel', [AdminController::class, 'admin_panel'])->name('admin');
 // Route::get('/admin_layout', [AdminController::class, 'admin_layout']);
 
 Route::get('/admin_nav', [AdminController::class, 'admin_nav'])->name('admin_nav');
@@ -48,9 +49,9 @@ Route::post('/add_section', [AdminController::class, 'add_section']);
 Route::post('/exit_section/{id}', [AdminController::class, 'exit_section']);
 Route::get('/delete_section/{id}', [AdminController::class, 'delete_section']);
 
-<<<<<<< HEAD
+
 Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio');
-Route::post('/add_portfolio', [AdminController::class, 'add_portfolio']);
+Route::post('/add_portfolio/{id}', [AdminController::class, 'add_portfolio']);
 Route::post('/exit_sportfolio/{id}', [AdminController::class, 'exit_portfolio']);
 Route::get('/delete_portfolio/{id}', [AdminController::class, 'delete_portfolio']);
 
@@ -68,7 +69,7 @@ Route::get('/admin_card_web', [AdminController::class, 'admin_card_web'])->name(
 Route::post('/add_card_web', [AdminController::class, 'add_card_web']);
 Route::post('/exit_card_web/{id}', [AdminController::class, 'exit_card_web']);
 Route::get('/delete_card_web/{id}', [AdminController::class, 'delete_card_web']);
-=======
+
 Route::get('/reviews', [AdminController::class, 'reviews'])->name('reviews');
 Route::post('/add_reviews', [AdminController::class, 'add_reviews']);
 Route::post('/exit_reviews/{id}', [AdminController::class, 'exit_reviews']);
@@ -114,4 +115,29 @@ Route::get('/price_four', [AdminController::class, 'price_four'])->name('price_f
 Route::post('/add_price_four', [AdminController::class, 'add_price_four']);
 Route::post('/exit_price_four/{id}', [AdminController::class, 'exit_price_four']);
 Route::get('/delete_price_four/{id}', [AdminController::class, 'delete_price_four']);
->>>>>>> 4564f87a3dfd56f788f9d52891de25fdf051fda5
+
+Route::get('/admin_team', [AdminController::class, 'admin_team'])->name('admin_team');
+Route::post('/add_team', [AdminController::class, 'add_team']);
+Route::post('/exit_team/{id}', [AdminController::class, 'exit_team']);
+Route::get('/delete_team/{id}', [AdminController::class, 'delete_team']);
+
+Route::get('/admin_teamCard', [AdminController::class, 'admin_Cardteam'])->name('admin_teamCard');
+Route::post('/add_Cardteam', [AdminController::class, 'add_Cardteam']);
+Route::post('/exit_Cardteam/{id}', [AdminController::class, 'exit_Cardteam']);
+Route::get('/delete_Cardteam/{id}', [AdminController::class, 'delete_Cardteam']);
+
+Route::get('/admin_icon_link', [AdminController::class, 'admin_icon_link'])->name('admin_icon_link');
+Route::post('/add_icon_link', [AdminController::class, 'add_icon_link']);
+Route::post('/exit_icon_link/{id}', [AdminController::class, 'exit_icon_link']);
+Route::get('/delete_icon_link/{id}', [AdminController::class, 'delete_icon_link']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/exit', [AuthController::class, 'exit']);
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'login_process']);
+    Route::get('/register', [AuthController::class, 'register']);
+    Route::post('/register', [AuthController::class, 'register_process']);
+});

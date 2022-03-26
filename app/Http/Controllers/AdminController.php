@@ -26,6 +26,9 @@ use App\Models\PriceTwo;
 use App\Models\TitleFaq;
 use App\Models\PriceThree;
 use App\Models\PriceFour;
+use App\Models\Team;
+use App\Models\CardTeam;
+use App\Models\IconCard;
 
 
 class AdminController extends Controller
@@ -984,4 +987,144 @@ class AdminController extends Controller
                 return redirect()->route('price_four');
             }
             // NAV END
+            public function admin_team(){
+                $team = new Team();
+                return view ('admin.admin_team' , ['team' => $team->all()]);
+            }
+            public function add_team(Request $data){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'description' => ['required'],
+                   
+                ]); 
+        
+                $team = new Team();
+                $team->title = $data->input('title');
+                $team->description = $data->input('description');
+                $team->save();
+                return redirect()->route('admin_team');
+            }
+            public function exit_team(Request $data, $id){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'description' => ['required']
+                ]); 
+                
+                $team = Team::find($id);
+                $team->title = $data->input('title');
+                $team->description = $data->input('description');
+                $team->save();
+                return redirect()->route('admin_team');
+            } 
+            public function delete_team($id){
+                Team::find($id)->delete();
+                return redirect()->route('admin_team');
+            }
+            public function admin_Cardteam(){
+                $cardTeam = new CardTeam();
+                return view ('admin.admin_teamCard' , ['cardTeam' => $cardTeam->all()]);
+            }  
+            public function add_Cardteam(Request $data){
+                $valid = $data->validate([
+                    'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                    'title' => ['required'],
+                    'description' => ['required'],
+                ]); 
+        
+                $file = $data->file('img');
+                $upload_folder = 'public/cardTeam/'; //Создается автоматически
+                $filename = $file->getClientOriginalName(); //Сохраняем исходное название изображения
+                Storage::putFileAs($upload_folder, $file, $filename); 
+        
+                $cardTeam = new CardTeam();
+                $cardTeam->img = $filename;
+                $cardTeam->title = $data->input('title');
+                $cardTeam->description = $data->input('description');
+                $cardTeam->save();
+                return redirect()->route('admin_teamCard');
+            }
+        
+            public function exit_Cardteam(Request $data, $id){
+                $valid = $data->validate([
+                    'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                    'title' => ['required'],
+                    'description' => ['required'],
+                ]); 
+                
+                $card = CardTeam::find($id);
+                if($data->file('img') != '') {
+                    $upload_folder = 'public/cardTeam/'; //Создается автоматически
+                    $file = $data->file('img');
+                    $filename = $file->getClientOriginalName();
+                    Storage::delete($upload_folder . '/' . $cardTeam->img);
+                    Storage::putFileAs($upload_folder, $file, $filename);    
+                    $cardTeam->cardTeam = $filename;
+                    Storage::putFileAs($upload_folder, $file, $filename); 
+                } else {
+                    $cardTeam->img = $cacardTeamrd->img;
+                }
+                
+                $cardTeam->title = $data->input('title');
+                $cardTeam->description = $data->input('description');
+                $cardTeam->save();
+        
+                return redirect()->route('admin_teamCard');
+            }  
+    
+            public function delete_Cardteam($id){
+                CardTeam::find($id)->delete();
+                return redirect()->route('admin_teamCard');
+            }
+
+            public function admin_icon_link(){
+                $icon = new IconCard();
+                return view ('admin.admin_icon_link' , ['icon' => $icon->all()]);
+            }  
+            public function add_icon_link(Request $data){
+                $valid = $data->validate([
+                    'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                    'link' => ['required']
+                ]); 
+        
+                $file = $data->file('img');
+                $upload_folder = 'public/IconCard/'; //Создается автоматически
+                $filename = $file->getClientOriginalName(); //Сохраняем исходное название изображения
+                Storage::putFileAs($upload_folder, $file, $filename); 
+        
+                $icon = new IconCard();
+                $icon->img = $filename;
+                $icon->link = $data->input('link');
+                $icon->save();
+                return redirect()->route('admin_icon_link');
+            }
+        
+            public function exit_icon_link(Request $data, $id){
+                $valid = $data->validate([
+                    'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
+                    'link' => ['required']
+                ]); 
+                
+                $icon = IconCard::find($id);
+                if($data->file('img') != '') {
+                    $upload_folder = 'public/IconCard/'; //Создается автоматически
+                    $file = $data->file('img');
+                    $filename = $file->getClientOriginalName();
+                    Storage::delete($upload_folder . '/' . $icon->img);
+                    Storage::putFileAs($upload_folder, $file, $filename);    
+                    $icon->img = $filename;
+                    Storage::putFileAs($upload_folder, $file, $filename); 
+                } else {
+                    $icon->img = $icon->img;
+                }
+                
+                $icon->link = $data->input('link');
+                $icon->save();
+        
+                return redirect()->route('admin_icon_link');
+            }  
+    
+            public function delete_icon_link($id){
+                IconCard::find($id)->delete();
+                return redirect()->route('admin_icon_link');
+            }
 }

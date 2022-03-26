@@ -296,17 +296,22 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Команда Реклама</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="tables-general.html">
-                            <i class="bi bi-circle"></i><span>General Tables</span>
+                        <a href="/admin_team">
+                            <i class="bi bi-circle"></i><span>Приветствие</span>
                         </a>
                     </li>
                     <li>
-                        <a href="tables-data.html">
-                            <i class="bi bi-circle"></i><span>Data Tables</span>
+                        <a href="/admin_teamCard">
+                            <i class="bi bi-circle"></i><span>Карта</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin_icon_link">
+                            <i class="bi bi-circle"></i><span>Иконки</span>
                         </a>
                     </li>
                 </ul>
