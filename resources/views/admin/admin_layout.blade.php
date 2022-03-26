@@ -181,6 +181,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/icon">
+                            <i class="bi bi-circle"></i><span>Иконки</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/img_about">
                             <i class="bi bi-circle"></i><span>Главная страница фото</span>
                         </a>
@@ -258,6 +263,21 @@
                     <li>
                         <a href="/price_four">
                             <i class="bi bi-circle"></i><span>Прайс 4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact_title">
+                            <i class="bi bi-circle"></i><span>Название контактов</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/email">
+                            <i class="bi bi-circle"></i><span>Почта</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/call">
+                            <i class="bi bi-circle"></i><span>Связь с нами</span>
                         </a>
                     </li>
                 </ul>

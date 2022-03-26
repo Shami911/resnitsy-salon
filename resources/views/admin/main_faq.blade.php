@@ -27,7 +27,7 @@
                             <div class="filter">
                             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exitfaq">Редактировать</button></li>
+                                <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exitfaq{{$faq->id}}">Редактировать</button></li>
                                 <li><a class="dropdown-item" href="/delete_faq/{{$faq->id}}">Удалить</a></li>
                             </ul>
                             </div>
@@ -40,11 +40,11 @@
                         </div>
                     </div><!-- End Sales Card -->
                 <!-- Modal Exit FAq -->
-                <div class="modal fade" id="exitfaq" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exitfaq{{$faq->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                         <div class="modal-header d-flex border-0">
-                            <h3 class="modal-title ms-auto" id="exampleModalLabel">Редактирование вопроса</h3>
+                            <h3 class="modal-title ms-auto" id="exitfaq{{$faq->id}}">Редактирование вопроса</h3>
                             <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -89,12 +89,12 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header d-flex border-0">
-        <h3 class="modal-title ms-auto" id="exampleModalLabel">Добавление вопроса</h3>
+        <h3 class="modal-title ms-auto" id="addfaq">Добавление вопроса</h3>
         <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
     
-        <form action="/add_faq" method="POST">
+        <form action="/add_faq/{id}" method="POST">
         @csrf
             <div>
             <div class="form-floating mt-2">

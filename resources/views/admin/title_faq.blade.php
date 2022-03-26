@@ -44,7 +44,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header d-flex border-0">
-                                <h3 class="modal-title ms-auto" id="exampleModalLabel">Редактирование вопроса</h3>
+                                <h3 class="modal-title ms-auto" id="exampleModalLabel">Редактирование</h3>
                                 <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -52,7 +52,7 @@
                                     @csrf
                                     <div>
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="title" value="" class="form-control" id="title" placeholder="name@example.com">
+                                            <input type="text" name="title" value="{{$faq->title}}" class="form-control" id="title" placeholder="name@example.com">
                                             <label for="question">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
                                         </div>
                                         <button class="btn btn-lg btn-carousel mt-2 w-100">Сохранить</button>
@@ -87,7 +87,7 @@
                     <div>
                         <div class="form-floating mt-2">
                             <input type="text" name="title" value="" class="form-control" id="title" placeholder="name@example.com">
-                            <label for="question">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                            <label for="title">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
                         </div>
 
                     </div>

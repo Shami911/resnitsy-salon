@@ -20,8 +20,10 @@ use App\Models\PriceTwo;
 use App\Models\TitleFaq;
 use App\Models\PriceThree;
 use App\Models\PriceFour;
-
-
+use App\Models\ContactTitle;
+use App\Models\Email;
+use App\Models\Call;
+use App\Models\Icon;
 
 class AdminController extends Controller
 {
@@ -493,7 +495,9 @@ class AdminController extends Controller
                 'service1' => ['required'],
                 'service2' => ['required'],
                 'service3' => ['required'],
-                'button' => ['required'],
+                'noservice' => ['required'],
+                'noservice2' => ['required'],
+                'button' => ['required']
             ]); 
             $price = new Price();
             $price->title = $data->input('title');
@@ -502,6 +506,8 @@ class AdminController extends Controller
             $price->service1 = $data->input('service1');
             $price->service2 = $data->input('service2');
             $price->service3 = $data->input('service3');
+            $price->noservice = $data->input('noservice');
+            $price->noservice2 = $data->input('noservice2');
             $price->button = $data->input('button');
             $price->save();
             return redirect()->route('price');
@@ -515,7 +521,9 @@ class AdminController extends Controller
                 'service1' => ['required'],
                 'service2' => ['required'],
                 'service3' => ['required'],
-                'button' => ['required'],
+                'noservice' => ['required'],
+                'noservice2' => ['required'],
+                'button' => ['required']
             ]); 
             $price = Price::find($id);
             $price->title = $data->input('title');
@@ -524,6 +532,8 @@ class AdminController extends Controller
             $price->service1 = $data->input('service1');
             $price->service2 = $data->input('service2');
             $price->service3 = $data->input('service3');
+            $price->noservice = $data->input('noservice');
+            $price->noservice2 = $data->input('noservice2');
             $price->button = $data->input('button');
             $price->save();
             return redirect()->route('price');
@@ -754,5 +764,159 @@ class AdminController extends Controller
                 return redirect()->route('price_four');
             }
             // NAV END
+            public function contact_title(){
+                $contact_title = new ContactTitle();
+                return view ('admin.contact_title' , ['contact_title' => $contact_title->all()]);
+            }  
+            public function add_contact_title(Request $data){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required'],
+                ]); 
+                $contact_title = new ContactTitle();
+                $contact_title->title = $data->input('title');
+                $contact_title->slogan = $data->input('slogan');
+                $contact_title->save();
+                return redirect()->route('contact_title');
+            }
+        
+            public function exit_contact_title(Request $data, $id){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required']
+                ]); 
+                $contact_title = ContactTitle::find($id);
+                $contact_title->title = $data->input('title');
+                $contact_title->slogan = $data->input('slogan');
+                $contact_title->save();
+                return redirect()->route('contact_title');
+            }  
+        
+            public function delete_contact_title($id){
+                ContactTitle::find($id)->delete();
+                return redirect()->route('contact_title');
+            }
 
+
+            public function email(){
+                $email = new Email();
+                return view ('admin.email' , ['email' => $email->all()]);
+            }  
+            public function add_email(Request $data){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required'],
+                    'slogan2' => ['required']
+                ]); 
+                $email = new Email();
+                $email->title = $data->input('title');
+                $email->slogan = $data->input('slogan');
+                $email->slogan2 = $data->input('slogan2');
+                $email->save();
+                return redirect()->route('email');
+            }
+        
+            public function exit_email(Request $data, $id){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required'],
+                    'slogan2' => ['required']
+                ]); 
+                $email = Email::find($id);
+                $email->title = $data->input('title');
+                $email->slogan = $data->input('slogan');
+                $email->slogan2 = $data->input('slogan2');
+                $email->save();
+                return redirect()->route('email');
+            }  
+        
+            public function delete_email($id){
+                Email::find($id)->delete();
+                return redirect()->route('email');
+            }
+            public function call(){
+                $call = new Call();
+                return view ('admin.call' , ['call' => $call->all()]);
+            }  
+            public function add_call(Request $data){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required'],
+                    'slogan2' => ['required']
+
+                ]); 
+                $call = new Call();
+                $call->title = $data->input('title');
+                $call->slogan = $data->input('slogan');
+                $call->slogan2 = $data->input('slogan2');
+                $call->save();
+                return redirect()->route('call');
+            }
+        
+            public function exit_call(Request $data, $id){
+                $valid = $data->validate([
+                    'title' => ['required'],
+                    'slogan' => ['required'],
+                    'slogan2' => ['required']
+                ]); 
+                $call = Call::find($id);
+                $call->title = $data->input('title');
+                $call->slogan = $data->input('slogan');
+                $call->slogan2 = $data->input('slogan2');
+                $call->save();
+                return redirect()->route('call');
+            }  
+        
+            public function delete_call($id){
+                Call::find($id)->delete();
+                return redirect()->route('call');
+        }
+
+        public function icon(){
+            $icon = new Icon();
+            return view ('admin.icon' , ['icon' => $icon->all()]);
+        }  
+        public function add_icon(Request $data){
+            $valid = $data->validate([
+                'icon' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp']
+            ]); 
+    
+            $file = $data->file('icon');
+            $upload_folder = 'public/Icon/'; //Создается автоматически
+            $filename = $file->getClientOriginalName(); //Сохраняем исходное название изображения
+            Storage::putFileAs($upload_folder, $file, $filename); 
+    
+            $icon = new Icon();
+            $icon->icon = $filename;
+            $icon->save();
+            return redirect()->route('icon');
+        }
+    
+        public function exit_icon(Request $data, $id){
+            $valid = $data->validate([
+                'icon' => ['image', 'mimetypes:image/jpeg,image/png,image/webp']
+            ]); 
+            
+            $icon = Icon::find($id);
+            if($data->file('icon') != '') {
+                $upload_folder = 'public/Icon/'; //Создается автоматически
+                $file = $data->file('icon');
+                $filename = $file->getClientOriginalName();
+                Storage::delete($upload_folder . '/' . $icon->icon);
+                Storage::putFileAs($upload_folder, $file, $filename);    
+                $icon->icon = $filename;
+                Storage::putFileAs($upload_folder, $file, $filename); 
+            } else {
+                $icon->icon = $icon->icon;
+            }
+            $icon->save();
+    
+            return redirect()->route('icon');
+        }
+    
+        public function delete_icon($id){
+            Icon::find($id)->delete();
+            return redirect()->route('icon');
+        }
+        // IMG ABOUT END
 }

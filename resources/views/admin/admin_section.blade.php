@@ -14,7 +14,7 @@
                         </ol>
                     </nav>
                 </div>
-                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addsection">Изменить секцию</button>
+                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addsection">Изменить</button>
             </div>
             <!-- End Page Title -->
         </div>
@@ -35,7 +35,10 @@
                         </div>
 
                         <div class="card-body">
-                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->title}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->title}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->slogan}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->button}}</h2>
+                            <div style="background-image: url(storage/ImgAbout/{{$item->img}}); background-size: cover; width: 400px;"></div>
                         </div>
         </section>
         <!-- End Hero -->
@@ -44,28 +47,29 @@
         <!-- End Sales Card -->
 
         <!-- Modal Exit Carousel -->
-        <div class="modal fade" id="exitsection{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exitsection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header d-flex border-0">
-                        <h3 class="modal-title ms-auto" id="exitservice">Редактирование секцию</h3>
+                        <h3 class="modal-title ms-auto" id="exitsection">Редактирование</h3>
                         <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="/exit_section/{{$item->id}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-floating mt-2">
-                                <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
-                                <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
-                            </div>
-                            <div class="form-floating mt-2">
                                 <div>
-                                    <input type="text" placeholder="Название" name="title" class="form-control mt-1"> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                                    <input type="text" placeholder="Кнопка" value="{{$item->button}}" name="button" class="form-control mt-1"> @if($errors->has('button')) {{$errors->first('button')}} @endif
                                 </div>
                             </div>
                             <div class="form-floating mt-2">
                                 <div>
-                                    <input type="text" placeholder="Cлоган" name="slogan" class="form-control mt-1"> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
+                                    <input type="text" placeholder="Название" value="{{$item->title}}" name="title" class="form-control mt-1"> @if($errors->has('title')) {{$errors->first('title')}} @endif
+                                </div>
+                            </div>
+                            <div class="form-floating mt-2">
+                                <div>
+                                    <input type="text" placeholder="Cлоган" value="{{$item->slogan}}" name="slogan" class="form-control mt-1"> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
                                 </div>
                             </div>
 

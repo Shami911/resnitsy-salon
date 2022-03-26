@@ -24,31 +24,9 @@
             <div class="row">
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                    <img src="{{$item->icon}}" class="img-fluid" alt="">
                 </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                </div>
-
             </div>
-
         </div>
     </section>
     <!-- End Clients Section -->
@@ -184,12 +162,12 @@
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
                             <img src="/storage/Comment/{{$item->img}}" class="testimonial-img" alt="">
-                            <h3>{{$item->name}}}</h3>
+                            <h3>{{$item->name}}</h3>
                             <h4>{{$item->work}}</h4>
                         </div>
                     </div>
                     <!-- End testimonial item -->
-                    @endforeach >
+                    @endforeach
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -428,6 +406,8 @@
                             <li>{{$item->service1}}</li>
                             <li>{{$item->service2}}</li>
                             <li>{{$item->service3}}</li>
+                            <li class="na">{{$item->noservice}}</li>
+                            <li class="na">{{$item->noservice2}}</li>
                         </ul>
                         <div class="btn-wrap">
                             <a href="#" class="btn-buy">{{$item->button}}</a>
@@ -506,12 +486,9 @@
             @endforeach @foreach($faq as $item)
             <div class="faq-list">
                 <ul>
-                    <li data-aos="fade-up">
-                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">{{$item->question}}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <li data-aos="fade-up"> <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1" aria-expanded="true">{{$item->question}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                         <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                            <p>
-                                {{$item->answer}}
-                            </p>
+                            <p> {{$item->answer}}</p>
                         </div>
                     </li>
                 </ul>
@@ -522,3 +499,82 @@
     </section>
     <!-- End Frequently Asked Questions Section -->
     <!-- End Frequently Asked Questions Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            @foreach($contact_title as $item)
+
+
+            <div class="section-title">
+                <h2>{{$item->title}}</h2>
+                <p>{{$item->slogan}}</p>
+            </div>
+            @endforeach
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bx bx-map"></i>
+                                <h3>Our Addres` s</h3>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="info-box mt-4">
+                                @foreach($email as $item)
+                                <i class="bx bx-envelope"></i>
+                                <h3>{{$item->title}}</h3>
+                                <p>{{$item->slogan}}<br>{{$item->slogan2}}</p>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="col-md-6">
+                            @foreach($call as $item)
+                            <div class="info-box mt-4">
+                                <i class="bx bx-phone-call"></i>
+                                <h3>{{$item->title}}</h3>
+                                <p>{{$item->slogan}}<br>{{$item->slogan2}}</p>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+</main>
+<!-- End #main -->

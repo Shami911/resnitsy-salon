@@ -36,7 +36,13 @@
     
                             <div class="card-body">
                             <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->Clients}}</h2>    
-                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->SloganClients}}</h2>   
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->SloganClients}}</h2> 
+                             <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->Projects}}</h2>    
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->SloganProjects}}</h2> 
+                             <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->Support}}</h2>    
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->SloganSupport}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->HardWorkers}}</h2>    
+                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->SloganWorkers}}</h2>   
                             <div style="background-image: url(storage/ImgAbout/{{$item->img}}); background-size: cover; height: 200px"></div>
                             </div>
     
