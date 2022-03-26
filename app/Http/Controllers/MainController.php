@@ -56,7 +56,6 @@ class MainController extends Controller
         $price_two = new PriceTwo();
         $price_three = new PriceThree();
         $price_four = new PriceFour();
-
         $contact_title = new ContactTitle();
         $email = new Email();
         $call = new Call();

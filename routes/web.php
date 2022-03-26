@@ -19,8 +19,8 @@ Route::get('/', [MainController::class, 'welcome'])->name('welcome');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'login_process']);
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'register_process']);
+// Route::get('/register', [AuthController::class, 'register']);
+// Route::post('/register', [AuthController::class, 'register_process']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/exit', [AuthController::class, 'exit']);
@@ -138,10 +138,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/add_Cardteam', [AdminController::class, 'add_Cardteam']);
     Route::post('/exit_Cardteam/{id}', [AdminController::class, 'exit_Cardteam']);
     Route::get('/delete_Cardteam/{id}', [AdminController::class, 'delete_Cardteam']);
-
-
-
-
 
     Route::get('/contact_title', [AdminController::class, 'contact_title'])->name('contact_title');
     Route::post('/add_contact_title', [AdminController::class, 'add_contact_title']);
