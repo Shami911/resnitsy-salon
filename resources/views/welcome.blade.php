@@ -23,22 +23,29 @@
 
             <div class="row">
                 @foreach($icon as $item)
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="{{$item->img}}" class="img-fluid" alt="">
+                <div class="col-xxl-6 col-md-2">
+                    <div class="card info-card sales-card pb-0">
+
+                        <div class="card-body">
+
+                            <img src="/storage/Icon/{{$item->img}}" style="background-size: cover; height: 100px ">
+                        </div>
+
+                    </div>
                 </div>
+                <!-- End Sales Card -->
+                @endforeach
             </div>
-            @endforeach
-        </div>
     </section>
     <!-- End Clients Section -->
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-        <div class="container">
+    <section id="about " class="about ">
+        <div class="container ">
 
-            <div class="row">
+            <div class="row ">
                 @foreach ($img as $item)
-                <div class="col-lg-6">
+                <div class="col-lg-6 ">
                     <img src="/storage/ImgAbout/{{$item->img}}" class="col-12 col-lg-10" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0">
