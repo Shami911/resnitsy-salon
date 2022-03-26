@@ -35,8 +35,10 @@
                         </div>
 
                         <div class="card-body">
-                            <h2 class="carousel-name mt-2 text-truncate w-75">{{$item->title}}</h2>
-                            <div style="background-image: url(storage/ImgAbout/{{$item->img}}); background-size: cover; height: 200px"></div>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->title}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->slogan}}</h2>
+                            <h2 class="carousel-name mt-2 text-truncate w-150">{{$item->button}}</h2>
+                            <div style="background-image: url(storage/ImgAbout/{{$item->img}}); background-size: cover; width: 400px;"></div>
                         </div>
         </section>
         <!-- End Hero -->
@@ -57,15 +59,15 @@
                             @csrf
                             <div>
                                 <div class="form-floating mt-2">
-                                    <input type="text" name="title" value="" class="form-control" id="title" placeholder="name@example.com">
+                                    <input type="text" name="title" value="{{$item->title}}" class="form-control" id="title" placeholder="name@example.com">
                                     <label for="title">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
                                 </div>
                                 <div class="form-floating mt-2">
-                                    <input type="text" name="slogan" value="" class="form-control" id="slogan" placeholder="name@example.com">
+                                    <input type="text" name="slogan" value="{{$item->slogan}}" class="form-control" id="slogan" placeholder="name@example.com">
                                     <label for="slogan">Слоган</label> @if($errors->has('slogan')) {{$errors->first('slogan')}} @endif
                                 </div>
                                 <div class="form-floating mt-2">
-                                    <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
+                                    <input type="text" name="button" value="{{$item->button}}" class="form-control" id="button" placeholder="name@example.com">
                                     <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
                                 </div>
 
@@ -111,8 +113,9 @@
                         </div>
                     </div>
                     <div class="form-floating mt-2">
-                        <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
-                        <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
+                        <div>
+                            <input type="text" placeholder="Кнопка" name="button" class="form-control mt-1"> @if($errors->has('button')) {{$errors->first('button')}} @endif
+                        </div>
                     </div>
             </div>
 

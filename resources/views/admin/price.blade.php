@@ -41,6 +41,8 @@
                                         <li>{{$item->service1}}</li>
                                         <li>{{$item->service2}}</li>
                                         <li>{{$item->service3}}</li>
+                                        <li>{{$item->noservice}}</li>
+                                        <li>{{$item->noservice2}}</li>
                                     </ul>
                                     <div class="btn-wrap">
                                         <a href="#" class="btn-buy">{{$item->button}}</a>
@@ -65,32 +67,43 @@
                                     @csrf
                                     <div>
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="title" value="" class="form-control" id="title" placeholder="name@example.com">
+                                            <input type="text" name="title" value="{{$item->title}}" class="form-control" id="title" placeholder="name@example.com">
                                             <label for="title">Название</label> @if($errors->has('title')) {{$errors->first('title')}} @endif
                                         </div>
                                         <div class="form-floating mt-2">
-                                            <input type="number" name="cost" value="" class="form-control" id="cost" placeholder="name@example.com">
+                                            <input type="number" name="cost" value="{{$item->cost}}" class="form-control" id="cost" placeholder="name@example.com">
                                             <label for="cost">Цена</label> @if($errors->has('cost')) {{$errors->first('cost')}} @endif
                                         </div>
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="time" value="" class="form-control" id="time" placeholder="name@example.com">
+                                            <input type="text" name="time" value="{{$item->time}}" class="form-control" id="time" placeholder="name@example.com">
                                             <label for="time">Время</label> @if($errors->has('time')) {{$errors->first('time')}} @endif
                                         </div>
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="service1" value="" class="form-control" id="service1" placeholder="name@example.com">
+                                            <input type="text" name="service1" value="{{$item->service1}}" class="form-control" id="service1" placeholder="name@example.com">
                                             <label for="service1">Сервис 1</label> @if($errors->has('service1')) {{$errors->first('service1')}} @endif
                                         </div>
 
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="service2" value="" class="form-control" id="service2" placeholder="name@example.com">
+                                            <input type="text" name="service2" value="{{$item->service2}}" class="form-control" id="service2" placeholder="name@example.com">
                                             <label for="service2">Сервис 2</label> @if($errors->has('service2')) {{$errors->first('service2')}} @endif
                                         </div>
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="service3" value="" class="form-control" id="service3" placeholder="name@example.com">
+                                            <input type="text" name="service3" value="{{$item->service3}}" class="form-control" id="service3" placeholder="name@example.com">
                                             <label for="service3">Сервис 3</label> @if($errors->has('service3')) {{$errors->first('service3')}} @endif
                                         </div>
+
                                         <div class="form-floating mt-2">
-                                            <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
+                                            <input type="text" name="noservice" value="{{$item->noservice}}" class="form-control" id="noservice" placeholder="name@example.com">
+                                            <label for="noservice">Что не входит</label> @if($errors->has('noservice')) {{$errors->first('noservice')}} @endif
+                                        </div>
+
+                                        <div class="form-floating mt-2">
+                                            <input type="text" name="noservice2" value="{{$item->noservice2}}" class="form-control" id="noservice2" placeholder="name@example.com">
+                                            <label for="noservice2">Что не входит</label> @if($errors->has('noservice2')) {{$errors->first('noservice2')}} @endif
+                                        </div>
+
+                                        <div class="form-floating mt-2">
+                                            <input type="text" name="button" value="{{$item->button}}" class="form-control" id="button" placeholder="name@example.com">
                                             <label for="button">Кнопка</label> @if($errors->has('button')) {{$errors->first('button')}} @endif
                                         </div>
                                     </div>
@@ -150,6 +163,15 @@
                         <div class="form-floating mt-2">
                             <input type="text" name="service3" value="" class="form-control" id="service3" placeholder="name@example.com">
                             <label for="service3">Сервис 3</label> @if($errors->has('service3')) {{$errors->first('service3')}} @endif
+                        </div>
+                        <div class="form-floating mt-2">
+                            <input type="text" name="noservice" value="" class="form-control" id="noservice" placeholder="name@example.com">
+                            <label for="noservice">Что не входит</label> @if($errors->has('noservice')) {{$errors->first('noservice')}} @endif
+                        </div>
+
+                        <div class="form-floating mt-2">
+                            <input type="text" name="noservice2" value="" class="form-control" id="noservice2" placeholder="name@example.com">
+                            <label for="noservice2">Что не входит</label> @if($errors->has('noservice2')) {{$errors->first('noservice2')}} @endif
                         </div>
                         <div class="form-floating mt-2">
                             <input type="text" name="button" value="" class="form-control" id="button" placeholder="name@example.com">
