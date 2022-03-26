@@ -878,45 +878,46 @@ class AdminController extends Controller
         }  
         public function add_icon(Request $data){
             $valid = $data->validate([
-                'icon' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp']
+                'img' => ['required', 'image', 'mimetypes:image/jpeg,image/png,image/webp'],
             ]); 
     
-            $file = $data->file('icon');
+            $file = $data->file('img');
             $upload_folder = 'public/Icon/'; //Создается автоматически
             $filename = $file->getClientOriginalName(); //Сохраняем исходное название изображения
             Storage::putFileAs($upload_folder, $file, $filename); 
     
             $icon = new Icon();
-            $icon->icon = $filename;
+            $icon->img = $filename;
             $icon->save();
             return redirect()->route('icon');
         }
     
         public function exit_icon(Request $data, $id){
             $valid = $data->validate([
-                'icon' => ['image', 'mimetypes:image/jpeg,image/png,image/webp']
+                'img' => ['image', 'mimetypes:image/jpeg,image/png,image/webp']
             ]); 
             
             $icon = Icon::find($id);
-            if($data->file('icon') != '') {
+            if($data->file('img') != '') {
                 $upload_folder = 'public/Icon/'; //Создается автоматически
-                $file = $data->file('icon');
+                $file = $data->file('img');
                 $filename = $file->getClientOriginalName();
-                Storage::delete($upload_folder . '/' . $icon->icon);
+                Storage::delete($upload_folder . '/' . $icon->img);
                 Storage::putFileAs($upload_folder, $file, $filename);    
-                $icon->icon = $filename;
+                $icon->img = $filename;
                 Storage::putFileAs($upload_folder, $file, $filename); 
             } else {
-                $icon->icon = $icon->icon;
+                $icon->img = $icon->img;
             }
             $icon->save();
     
             return redirect()->route('icon');
-        }
+        }  
     
         public function delete_icon($id){
             Icon::find($id)->delete();
             return redirect()->route('icon');
         }
         // IMG ABOUT END
+
 }

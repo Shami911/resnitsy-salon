@@ -22,11 +22,12 @@
         <div class="container">
 
             <div class="row">
-
+                @foreach($icon as $item)
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="{{$item->icon}}" class="img-fluid" alt="">
+                    <img src="{{$item->img}}" class="img-fluid" alt="">
                 </div>
             </div>
+            @endforeach
         </div>
     </section>
     <!-- End Clients Section -->
