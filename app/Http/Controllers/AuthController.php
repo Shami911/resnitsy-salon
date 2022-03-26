@@ -38,7 +38,7 @@ class AuthController extends Controller
         ]);
     
         if (auth('web')->attempt($data)) {
-            return redirect()->route('welcome');
+            return redirect()->route('admin');
         } else {
             return redirect()->route('login')->withErrors([
                 'email' => 'Emial или пароль введены неверно!'
