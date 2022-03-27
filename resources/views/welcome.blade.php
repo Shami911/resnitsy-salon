@@ -7,10 +7,9 @@
 <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container position-relative">
         @foreach($nav as $item)
-            <h1>{{$item->title}}</h1>
-            <h2>{{$item->slogan}}</h2>
-        <a href="#about" class="btn-get-started scrollto">{{$item->button}}</a>
-        @endforeach
+        <h1>{{$item->title}}</h1>
+        <h2>{{$item->slogan}}</h2>
+        <a href="#about" class="btn-get-started scrollto">{{$item->button}}</a> @endforeach
     </div>
 </section>
 <!-- End Hero -->
@@ -185,90 +184,86 @@
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
-      <div class="container">
-@foreach ($portfolio as $item)
-        <div class="section-title">
-          <h2>{{$item->title}}</h2>
-          <p>{{$item->description}}</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">{{$item->buttonAll}}</li>
-              <li data-filter=".filter-app">{{$item->buttonApp}}</li>
-              <li data-filter=".filter-card">{{$item->buttonCard}}</li>
-              <li data-filter=".filter-web">{{$item->buttonWeb}}</li>
-            </ul>
-          </div>
-        </div>
-@endforeach
-        <div class="row portfolio-container">
-
-@foreach ($cardApp as $item)
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <img src="storage/CardApp/{{$item->img}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{$item->title}}</h4>
-                <p>{{$item->description}}</p>
-                <a href="storage/CardApp/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-@endforeach
-
-@foreach ($card as $item)
-
-          <div class="col-lg-4 col-md-6 portfolio-item  filter-card">
-            <img src="storage/CardPortfolio/{{$item->img}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>{{$item->title}}</h4>
-              <p>{{$item->description}}</p>
-              <a href="storage/CardPortfolio/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-@endforeach
-
-@foreach ($cardWeb as $item)
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-            <img src="storage/cardWeb/{{$item->img}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>{{$item->title}}</h4>
-              <p>{{$item->description}}</p>
-              <a href="storage/cardWeb/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-@endforeach
-
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
         <div class="container">
-@foreach ($team as $item)
+            @foreach ($portfolio as $item)
             <div class="section-title">
                 <h2>{{$item->title}}</h2>
                 <p>{{$item->description}}</p>
             </div>
-@endforeach
+
             <div class="row">
-@foreach ($Cardteam as $item)
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">{{$item->buttonAll}}</li>
+                        <li data-filter=".filter-app">{{$item->buttonApp}}</li>
+                        <li data-filter=".filter-card">{{$item->buttonCard}}</li>
+                        <li data-filter=".filter-web">{{$item->buttonWeb}}</li>
+                    </ul>
+                </div>
+            </div>
+            @endforeach
+            <div class="row portfolio-container">
+
+                @foreach ($cardApp as $item)
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <img src="storage/CardApp/{{$item->img}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{$item->title}}</h4>
+                        <p>{{$item->description}}</p>
+                        <a href="storage/CardApp/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+                @endforeach @foreach ($card as $item)
+
+                <div class="col-lg-4 col-md-6 portfolio-item  filter-card">
+                    <img src="storage/CardPortfolio/{{$item->img}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{$item->title}}</h4>
+                        <p>{{$item->description}}</p>
+                        <a href="storage/CardPortfolio/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+
+                @endforeach @foreach ($cardWeb as $item)
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
+                    <img src="storage/cardWeb/{{$item->img}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{$item->title}}</h4>
+                        <p>{{$item->description}}</p>
+                        <a href="storage/cardWeb/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                        <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container">
+            @foreach ($team as $item)
+            <div class="section-title">
+                <h2>{{$item->title}}</h2>
+                <p>{{$item->description}}</p>
+            </div>
+            @endforeach
+            <div class="row">
+                @foreach ($Cardteam as $item)
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member">
                         <div class="member-img">
-                            <img src="storage/cardTeam/{{$item->img}}" class="img-fluid" style="width: 100%; height: 310px" alt="">
-    @foreach ($IconCard as $item)
+                            <img src="storage/cardTeam/{{$item->img}}" class="img-fluid" style="width: 100%; height: 310px" alt=""> @foreach ($IconCard as $item)
                             <div class="social">
                                 <a href="{{$item->link}}"><img src="storage/IconCard/{{$item->img}}" style="width: 25px" alt=""></a>
                             </div>
-    @endforeach
+                            @endforeach
                         </div>
                         <div class="member-info">
                             <h4>{{$item->title}}</h4>
@@ -276,61 +271,9 @@
                         </div>
                     </div>
                 </div>
-@endforeach
+                @endforeach
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <div class="member-img">
-                            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -435,8 +378,7 @@
             <div class="section-title">
                 <h2>{{$item->title}}</h2>
             </div>
-            @endforeach
-             @foreach($faq as $item)
+            @endforeach @foreach($faq as $item)
             <div class="faq-list">
                 <ul>
                     <li data-aos="fade-up"> <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1" aria-expanded="true">{{$item->question}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>

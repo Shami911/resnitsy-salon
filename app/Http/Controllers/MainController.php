@@ -41,7 +41,6 @@ class MainController extends Controller
         $count = new Count();
         $service = new service();
         $title_service = new title_service();
-        $section = new section();
         $portfolio = new Portfolio();
         $card = new CardPortfolio();
         $cardApp = new CardApp();
@@ -50,12 +49,15 @@ class MainController extends Controller
         $reviews = new Reviews();
         $comment = new Comment();
         $faq = new MainFaq();
+        $Cardteam = new CardTeam();
+        $IconCard = new IconCard();
         $title_faq = new TitleFaq();
         $pricing_title = new PricingTitle();
         $price = new Price();
         $price_two = new PriceTwo();
         $price_three = new PriceThree();
         $price_four = new PriceFour();
+        $team = new Team();
         $contact_title = new ContactTitle();
         $email = new Email();
         $call = new Call();
