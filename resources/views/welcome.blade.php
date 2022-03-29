@@ -27,7 +27,7 @@
 
                         <div class="card-body">
 
-                            <img src="/storage/Icon/{{$item->img}}" style="background-size: cover; height: 100px ">
+                            <img src="/storage/Icon/{{$item->img}}">
                         </div>
 
                     </div>
