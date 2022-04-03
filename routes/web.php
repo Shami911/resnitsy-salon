@@ -19,8 +19,8 @@ Route::get('/', [MainController::class, 'welcome'])->name('welcome');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'login_process']);
-// Route::get('/register', [AuthController::class, 'register']);
-// Route::post('/register', [AuthController::class, 'register_process']);
+Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register_process']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/exit', [AuthController::class, 'exit']);
@@ -74,8 +74,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete_section/{id}', [AdminController::class, 'delete_section']);
 
     Route::get('/portfolio', [AdminController::class, 'portfolio'])->name('portfolio');
-    Route::post('/add_portfolio/{id}', [AdminController::class, 'add_portfolio']);
-    Route::post('/exit_sportfolio/{id}', [AdminController::class, 'exit_portfolio']);
+    Route::post('/add_portfolio', [AdminController::class, 'add_portfolio']);
+    Route::post('/exit_portfolio/{id}', [AdminController::class, 'exit_portfolio']);
     Route::get('/delete_portfolio/{id}', [AdminController::class, 'delete_portfolio']);
 
     Route::get('/PortfolioCard', [AdminController::class, 'PortfolioCard'])->name('PortfolioCard');

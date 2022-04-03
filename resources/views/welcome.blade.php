@@ -23,7 +23,7 @@
             <div class="row">
                 @foreach($icon as $item)
                 <div class="col-xxl-6 col-md-2">
-                    <div class="card info-card sales-card pb-0">
+                    <div class=" info-card sales-card pb-0">
 
                         <div class="card-body">
 
@@ -207,22 +207,22 @@
                 @foreach ($cardApp as $item)
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="storage/CardApp/{{$item->img}}" class="img-fluid" alt="">
+                    <img src="storage/CardApp/{{$item->img}}" style="width: 420px" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>{{$item->title}}</h4>
                         <p>{{$item->description}}</p>
-                        <a href="storage/CardApp/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                        <a href="storage/CardApp/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title=""><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
                 @endforeach @foreach ($card as $item)
 
                 <div class="col-lg-4 col-md-6 portfolio-item  filter-card">
-                    <img src="storage/CardPortfolio/{{$item->img}}" class="img-fluid" alt="">
+                    <img src="storage/CardPortfolio/{{$item->img}}" style="width: 420px"  class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>{{$item->title}}</h4>
                         <p>{{$item->description}}</p>
-                        <a href="storage/CardPortfolio/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                        <a href="storage/CardPortfolio/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title=""><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
@@ -230,11 +230,11 @@
                 @endforeach @foreach ($cardWeb as $item)
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web ">
-                    <img src="storage/cardWeb/{{$item->img}}" class="img-fluid" alt="">
+                    <img src="storage/cardWeb/{{$item->img}}" style="width: 420px"  class="img-fluid" alt="">
                     <div class="portfolio-info">
                         <h4>{{$item->title}}</h4>
                         <p>{{$item->description}}</p>
-                        <a href="storage/cardWeb/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                        <a href="storage/cardWeb/{{$item->img}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title=""><i class="bx bx-plus"></i></a>
                         <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox details-link" title="Portfolio Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>

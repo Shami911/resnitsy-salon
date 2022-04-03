@@ -7,15 +7,15 @@
         <div class="pagetitle">
             <div class="d-flex">
                 <div>
-                    <h1>Реклама</h1>
+                    <h1>О нас</h1>
                     <nav>
                         <ol class="breadcrumb mb-0">
                             <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-                            <li class="breadcrumb-item active">Реклама</li>
+                            <li class="breadcrumb-item active">О нас</li>
                         </ol>
                     </nav>
                 </div>
-                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addimg">Добавить рекламу</button>
+                <button class="btn btn-carousel ms-auto" data-bs-toggle="modal" data-bs-target="#addimg">Добавить</button>
             </div><!-- End Page Title -->
         </div>
     
@@ -127,7 +127,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header d-flex border-0">
-            <h3 class="modal-title ms-auto" id="exampleModalLabel">Добавление карточки</h3>
+            <h3 class="modal-title ms-auto" id="exampleModalLabel">О нас</h3>
             <button type="button" class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -143,7 +143,7 @@
     
                 <div class="form-floating mt-2">
                     <input type="text" name="title" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Название рекламы</label>
+                    <label for="floatingInput">Название</label>
                     @if($errors->has('title'))
                         {{$errors->first('title')}}
                     @endif
