@@ -245,7 +245,7 @@
                             <i class="bi bi-circle"></i><span>Прайс 2</span>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="/price_three">
                             <i class="bi bi-circle"></i><span>Прайс 3</span>
                         </a>
@@ -322,13 +322,16 @@
                 </ul>
             </li>
 
+<<<<<<< HEAD
         
         </ul>
 
+=======
+>>>>>>> 090e94aa5500156266515a340e5f1d6d2b10c8ac
     </aside>
     <!-- End Sidebar-->
 
-  @yield('admin_main')
+    @yield('admin_main')
 
    
 
